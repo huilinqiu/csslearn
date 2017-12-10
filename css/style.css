@@ -125,4 +125,8 @@ body {
 	color: white;
 	/*vertical-align: super;*/
 }
+.m-hide-menu.control li.panel-block {
+	border: 0;
+	padding: 0;
+}
 
