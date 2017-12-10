@@ -12,9 +12,9 @@
 	</head>
 	<body>
 		<div class="container">
-				<nav class="panel is-unselectable">
+			<nav class="panel is-unselectable">
 			<p class="panel-heading has-text-info">
-				position&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				top&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<a class="button is-link m-copy">复制本页链接</a>
 			    <a class="button is-success">
 			    	<span>分享</span>
@@ -30,22 +30,24 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>position：</strong><span class="m-border-bg">static</span>|<span>relative</span>|<span>absolute</span>|<span>fixed</span>|<span class="m-color-super">center</span><span class="m-css3-super">css3</span>|<span class="m-color-super">page</span><span class="m-css3-super">css3</span>|<span class="m-color-super">sticky</span><span class="m-css3-super">css3</span>
+						<strong>top：</strong><span class="m-border-bg">auto</span><span>|</span><span>&lt;length&gt;</span><span>|</span><span>&lt;percentage&gt;</span>
 					</li>
 					<li>
-						<strong>默认值：</strong><span class="m-border-bg">static</span>
+						<strong>默认值：</strong><span class="m-border-bg">auto</span>
 					</li>
 					<li>
-						<strong>适用于：</strong><span>除display属性定义为table-column-group | table-column之外的所有元素</span>
+						<strong>适用于：</strong><span>定位元素。即定义了position为非static的元素。</span>
 					</li>
 					<li>
 						<strong>继承性：</strong><span>无</span>
 					</li>
 					<li>
-						<strong>动画性：</strong><span>否</span>
+						<strong>动画性：</strong><span>当值为&lt;length&gt;</span><span>|</span><span>&lt;percentage&gt;时</span>
 					</li>
 					<li>
-						<strong>计算值：</strong><span>指定值</span>
+						<strong>计算值：</strong><span>当position为static时，计算值是auto。为relative时，如果top和bottom都是auto，则它们的计算值是0；如果top和bottom其中一个为auto，
+							则auto相当于另一个的负值，即top = -bottom；如果top和bottom的值都不为auto，则忽略bottom。否则在其它情况下，当指定值为&lt;length&gt;时，计算值为指定值，当指定值
+							为&lt;percentage&gt;时，计算值为计算后的绝对值。除去这些情况，都为auto</span>
 					</li>
 					<li>
 						<strong>媒体：</strong><span>视觉</span>
@@ -58,28 +60,8 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>static：</strong><span>对象遵循常规流。此时4个定位偏移属性不会被应用。</span>
-					</li>
-					<li>
-						<strong>relative：</strong><span>对象遵循常规流，并且参照自身在常规流中的位置通过top，right，bottom，left这4个定位偏移属性进行偏移时不会影响常规流中的任何元素。</span>
-					</li>
-					<li>
-						<strong>absolute：</strong><span>对象脱离常规流，此时偏移属性参照的是离自身最近的定位祖先元素，如果没有定位的祖先元素，则一直回溯到body元素。盒子的偏移位置不影响常规流中的任何元素，其margin不与其他任何margin折叠。</span>
-					</li>
-					<li>
-						<strong>fixed：</strong><span>与absolute一致，但偏移定位是以窗口为参考。当出现滚动条时，对象不会随着滚动。</span>
-					</li>
-					<li>
-						<strong>center：</strong><span>与absolute一致，但偏移定位是以定位祖先元素的中心点为参考。盒子在其包含容器垂直水平居中。（CSS3）</span>
-					</li>
-					<li>
-						<strong>page：</strong><span>与absolute一致。元素在分页媒体或者区域块内，元素的包含块始终是初始包含块，否则取决于每个absolute模式。（CSS3）</span>
-					</li>
-					<li>
-						<strong>sticky：</strong><span>对象在常态时遵循常规流。它就像是relative和fixed的合体，当在屏幕中时按常规流排版，当卷动到屏幕外时则表现如fixed。该属性的表现是现实中你见到的吸附效果。（CSS3）</span>
-					</li>
-					<li>
-						<span>* CSS3新增属性可能存在描述错误及变更，仅供参考，持续更新</span>
+						<strong>auto：</strong><span>无特殊定位，根据HTML定位规则在文档流中分配&lt;length&gt;：用长度值来定义距离顶部的偏移量。可以为负值。&lt;percentage&gt;：用百分比来定义
+							距离顶部的偏移量。百分比参照包含块的高度。可以为负值。</span>
 					</li>
 				</ul>
 			</div>
@@ -89,7 +71,8 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>检索对象的定位方式：</strong><span>当position的值为非static时，其层叠级别通过z-index属性定义。绝对定位的元素，在top，right，bottom，left属性未设置时，会紧随在其前面的兄弟元素之后，但在位置上不影响常规流中的任何元素。</span>
+						<strong>检索或设置对象参照相对物顶边界向下偏移位置：</strong><span>该属性用来指定盒子参照相对物顶边界向下偏移。相对定位元素的相对物是自身，绝对定位和居中定位元素是从包含块
+							的padding边界开始计算偏移值对应的脚本特性为top。</span>
 					</li>
 				</ul>
 			</div>
@@ -110,95 +93,52 @@
 						    <tr>
 						      <th class="m-blue"><abbr title="values">Values</abbr></th>
 						      <th>Basic Support</th>
-						      <th><abbr title="fixed">Fixed</abbr></th>
-						      <th>Center | Page</th>
-						      <th>Sticky</th>
 						    </tr>
 						  </thead>
 						  <tfoot>
 						   <tr>
 						      <th class="m-blue"><abbr title="values">Values</abbr></th>
 						      <th>Basic Support</th>
-						      <th><abbr title="fixed">Fixed</abbr></th>
-						      <th>Center | Page</th>
-						      <th>Sticky</th>
 						    </tr>
 						  </tfoot>
 						  <tbody>
 						    <tr>
-						      <th rowspan="2" class="m-blue">IE</th>
-						      <td rowspan="2" class="m-green">6.0+<sup>#1</sup></td>
-						      <td class="m-red">6.0</td>
-						      <td rowspan="2" class="m-red">6.0-11.0</td>
-						      <td rowspan="2" class="m-red">6.0-11.0</td>
+						      <th class="m-blue">IE</th>
+						      <td class="m-green">6.0+</td>
 						    </tr>
 						    <tr>
-						      <td class="m-green">7.0+</td>
-						    </tr>
-						    <tr>
-						      <th rowspan="2" class="m-blue">Firefox</th>
-						      <td rowspan="2" class="m-green">2.0+<sup>#2</sup></td>
-						      <td rowspan="2" class="m-green">2.0+</td>
-						      <td rowspan="2" class="m-red">2.0-42.0</td>
-						      <td class="m-red">2.0-31.0</td>
-						    </tr>
-						     <tr>
-						      <td class="m-green">32.0+</td>
+						      <th class="m-blue">Firefox</th>
+						      <td class="m-green">2.0+</td>
 						    </tr>
 						    <tr>
 						      <th class="m-blue">Chrome</th>
 						      <td class="m-green">4.0+</td>
-						      <td class="m-green">4.0+</td>
-						      <td class="m-red">4.0-47.0</td>
-						      <td class="m-red">4.0-47.0</td>
 						    </tr>
 						     <tr>
-						      <th rowspan="2" class="m-blue">Safari</th>
-						      <td rowspan="2" class="m-green">6.0+</td>
-						      <td rowspan="2" class="m-green">6.0+</td>
-						      <td rowspan="2" class="m-red">6.0-9.0</td>
-						      <td class="m-red">6.0</td>
-						    </tr>
-						     <tr>
-						      <td class="m-green">6.1-9.0<sup>-webkit-</sup></td>
+						      <th class="m-blue">Safari</th>
+						      <td class="m-green">6.0+</td>
 						    </tr>
 						    <tr>
 						      <th class="m-blue">Opera</th>
 						      <td class="m-green">15.0+</td>
-						      <td class="m-green">15.0+</td>
-						      <td class="m-red">15.0-32.0</td>
-						      <td class="m-red">15.0-32.0</td>
 						    </tr>
 						    <tr>
 						      <th class="m-blue">IOS Safari</th>
 						      <td class="m-green">6.0+</td>
-						      <td class="m-green">6.0+</td>
-						      <td class="m-red">6.0-9.0</td>
-						      <td class="m-green">6.0-9.0<sup>-webkit-</sup></td>
 						    </tr>
 						    <tr>
-						      <th rowspan="2" class="m-blue">Android Browser</th>
-						      <td rowspan="2" class="m-green">2.1+</td>
-						      <td class="m-pink">2.1-2.3<sup>#3</sup></td>
-						      <td rowspan="2" class="m-red">2.1-4.4.4</td>
-						      <td rowspan="2" class="m-red">2.1-4.4.4</td>
-						    </tr>
-						    <tr>
-						    	<td class="m-red">3.0+</td>
+						      <th class="m-blue">Android Browser</th>
+						      <td class="m-green">2.1+</td>
 						    </tr>
 						    <tr>
 						      <th class="m-blue">Android Chrome</th>
 						      <td class="m-green">18.0+</td>
-						      <td class="m-green">18.0+</td>
-						      <td class="m-red">18.0-42.0</td>
-						      <td class="m-red">18.0-42.0</td>
 						    </tr>
 						  </tbody>
 						</table>
 					</li>
-					<li>1.IE如果在 quirks mode下将不支持；</li>
-					<li>2.Firefox30.0开始支持 tr, thead, tfoot, tbody 定义 relative，Firefox30.0之前的版本及其它浏览器都只能给 table 定义 relative 用以约束内部元素的定位；</li>
-					<li>3.需要定义了&lt;meta name="viewport" content="width=device-width, user-scalable=no"&gt;才生效</li>
+					<li>1.在IE6及以前的版本下，如果top和bottom都定义了非auto的值，那么 bottom 的计算值将会被设置为 -top（无论是否显式的定义了 height 或 max-height），
+						它的指定值将被忽略，说白了，你将无法在不指定某个元素高度的情况，通过给元素指定top和bottom的方式来进行高度拉伸；</li>
 				</ul>
 			</div>
 			<a class="panel-block m-background">
@@ -282,6 +222,6 @@
 		</div>
 		<script src="../../js/clipboard.min.js"></script>
 		<script src="../../js/common.js"></script>
-		<script src="../../js/position-code.js"></script>
+		<script src="../../js/top-code.js"></script>
 	</body>
 </html>

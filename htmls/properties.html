@@ -3143,10 +3143,12 @@
 			
 			// span标签点击转向网页
 			var span = document.querySelectorAll('.m-hide-menu.control .m-hide-menu.control li span:last-child');
-			var text = span[0].innerText;
-			span[0].addEventListener('click',function(){
-				location.href = './branchhtmls/'+text+'.html';
-			});
+				for(var i=0;i<span.length;i++){
+					span[i].addEventListener('click',function(){
+					var text = this.innerText;
+					location.href = './branchhtmls/'+text+'.html';
+				});
+			}
 		</script>
 	</body>
 </html>
