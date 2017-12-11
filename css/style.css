@@ -129,4 +129,21 @@ body {
 	border: 0;
 	padding: 0;
 }
-
+.m-title {
+	color: #FF6600;
+	text-decoration: none;
+}
+.m-title:after {
+	content: attr(title);
+	border: 1px solid #FF6600;
+	border-radius: 3px;
+	background: #FF6600;
+	color: white;
+	font-size: 12px;
+	position: relative;
+	top: -6px;
+}
+.m-blockquote {
+	border: 1px solid lightblue;
+	background: #fff0f0;
+}
