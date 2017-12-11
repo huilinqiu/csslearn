@@ -4,7 +4,7 @@ body {
 }
 .m-footer {
 	position: absolute;
-	height: 88%;
+	height: 100%;
 	width: 100%;
 	background: linear-gradient(white,#086AC8);
 }
@@ -65,7 +65,7 @@ body {
 }
 .m-dropdown-menu {
 	display: none;
-    left: 27.5em;
+    left: 47em;
  	top: 7px;
     min-width: 12rem;
     padding-top: 4px;
@@ -147,3 +147,12 @@ body {
 	border: 1px solid lightblue;
 	background: #fff0f0;
 }
+.container .panel-heading a:first-child {
+	position: absolute;
+	left: 85%;
+}
+.container .panel-heading a:nth-child(2) {
+	position: absolute;
+	left: 50%;	
+}
+
