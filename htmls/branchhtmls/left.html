@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		 <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=no">
+		<title>position</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+		<!--<link rel="stylesheet" href="../../lib/font-awesome.css">-->
+		<!--<link rel="stylesheet" href="../../lib/css/bulma.css">-->
+		<link rel="stylesheet" href="../../css/style.css">
+	</head>
+	<body>
+		<div class="container">
+			<nav class="panel is-unselectable">
+			<p class="panel-heading has-text-info">
+				left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a class="button is-link m-copy">复制本页链接</a>
+			    <a class="button is-success">
+			    	<span>分享</span>
+			    	<span class="icon">
+			    		<i class="fa fa-caret-up"></i>
+			    	</span>
+			    </a>
+				<a class="button is-pulled-right" href="../quicksearch.html">上页</a>
+			</p>
+			<a class="panel-block m-background">
+				 <span>语法：</span>  
+			</a>
+			<div class="panel-block control">
+				<ul>
+					<li>
+						<strong>left：</strong><span class="m-border-bg">auto</span><span>|</span><span>&lt;length&gt;</span><span>|</span><span>&lt;percentage&gt;</span>
+					</li>
+					<li>
+						<strong>默认值：</strong><span class="m-border-bg">auto</span>
+					</li>
+					<li>
+						<strong>适用于：</strong><span>定位元素。即定义了&lt;为非static的元素。</span>
+					</li>
+					<li>
+						<strong>继承性：</strong><span>无</span>
+					</li>
+					<li>
+						<strong>动画性：</strong><span>当值为&lt;length&gt;</span><span>|</span><span>&lt;percentage&gt;时</span>
+					</li>
+					<li>
+						<strong>计算值：</strong><span>当position为static时，计算值是auto。为relative时，如果right和left都是auto，则它们的计算值是0；如果right和left其中一个为auto，
+							则auto相当于另一个的负值，即left = -right；如果right和left的值都不为auto，则忽略right。否则在其它情况下，当指定值为&lt;length&gt;时，计算值为指定值，当指定值为
+								&lt;percentage&gt;时，计算值为计算后的绝对值。除去这些情况，都为auto</span>
+					</li>
+					<li>
+						<strong>媒体：</strong><span>视觉</span>
+					</li>
+				</ul>
+			</div>
+			<a class="panel-block m-background">
+				 <span>取值：</span>  
+			</a>
+			<div class="panel-block control">
+				<ul>
+					<li>
+						<strong>auto：</strong><span>无特殊定位，根据HTML定位规则在文档流中分配&lt;length&gt;：用长度值来定义距离左边的偏移量。可以为负值。&lt;percentage&gt;：用百分比来定义
+							距离左边的偏移量。百分比参照包含块的高度。可以为负值。</span>
+					</li>
+				</ul>
+			</div>
+			<a class="panel-block m-background">
+				 <span>说明：</span>  
+			</a>
+			<div class="panel-block control">
+				<ul>
+					<li>
+						<strong>检索或设置对象参照相对物左边界向右偏移位置：</strong><span>该属性用来指定盒子参照相对物左边界向右偏移。相对定位元素的相对物是自身，绝对定位和居中定位元素是从包含块
+							的padding边界开始计算偏移值对应的脚本特性为left。</span>
+					</li>
+				</ul>
+			</div>
+			<a class="panel-block m-background">
+				 <span>兼容性：</span>  
+			</a>
+			<div class="panel-block control">
+				<ul>
+					<li>
+						<div class="m-block m-green"></div><span>= 支持</span>
+						<div class="m-block m-red"></div><span>= 不支持</span>
+						<div class="m-block m-pink"></div><span>= 部分支持</span>
+					</li>
+					<li class="m-space"></li>
+					<li>
+						<table class="table is-bordered">
+						  <thead>
+						    <tr>
+						      <th class="m-blue"><abbr title="values">Values</abbr></th>
+						      <th>Basic Support</th>
+						    </tr>
+						  </thead>
+						  <tfoot>
+						   <tr>
+						      <th class="m-blue"><abbr title="values">Values</abbr></th>
+						      <th>Basic Support</th>
+						    </tr>
+						  </tfoot>
+						  <tbody>
+						    <tr>
+						      <th class="m-blue">IE</th>
+						      <td class="m-green">6.0+</td>
+						    </tr>
+						    <tr>
+						      <th class="m-blue">Firefox</th>
+						      <td class="m-green">2.0+</td>
+						    </tr>
+						    <tr>
+						      <th class="m-blue">Chrome</th>
+						      <td class="m-green">4.0+</td>
+						    </tr>
+						     <tr>
+						      <th class="m-blue">Safari</th>
+						      <td class="m-green">6.0+</td>
+						    </tr>
+						    <tr>
+						      <th class="m-blue">Opera</th>
+						      <td class="m-green">15.0+</td>
+						    </tr>
+						    <tr>
+						      <th class="m-blue">IOS Safari</th>
+						      <td class="m-green">6.0+</td>
+						    </tr>
+						    <tr>
+						      <th class="m-blue">Android Browser</th>
+						      <td class="m-green">2.1+</td>
+						    </tr>
+						    <tr>
+						      <th class="m-blue">Android Chrome</th>
+						      <td class="m-green">18.0+</td>
+						    </tr>
+						  </tbody>
+						</table>
+					</li>
+					<li>1.在IE6及以前的版本下，如果right和left都定义了非auto的值，那么 right 的计算值将会被设置为 -left （无论是否显式的定义了 width 或 max-width），它的指定值将被忽略，
+						说白了，你将无法在不指定某个元素宽度的情况，通过给元素指定right和left的方式来进行宽度拉伸；</li>
+				</ul>
+			</div>
+			<a class="panel-block m-background">
+				 <span>示例：</span>  
+			</a>
+			<div class="panel-block control">
+				<textarea class="textarea" placeholder="textarea"></textarea>
+			</div>
+			<a href="#" class="button is-link m-run-html">运行</a>
+			<a href="#" class="button is-success is-pulled-right m-copy-code">复制</a>
+			
+			<p class="">
+			     <div class="m-dropdown-menu" id="dropdown-menu" role="menu">
+					    <div class="dropdown-content">
+					      <a href="#" class="dropdown-item">
+					      	 <span class="icon">
+					      	 	<i class="fa fa-weibo"></i>
+					      	 </span>
+					       	 <span>新浪微博</span>
+					      </a>
+					      <a class="dropdown-item">
+			                <span class="icon">
+					      	 	<i class="fa fa-weixin"></i>
+					      	 </span>
+					       	 <span>微信</span>
+					      </a>
+					      <a href="#" class="dropdown-item">
+					        <span class="icon">
+					      	 	<i class="fa fa-qq"></i>
+					      	 </span>
+					       	 <span>QQ空间</span>
+					      </a>
+					      <a href="#" class="dropdown-item">
+					         <span class="icon">
+					      	 	<i class="fa fa-renren"></i>
+					      	 </span>
+					       	 <span>人人网</span>
+					      </a>
+					      <a href="#" class="dropdown-item">
+			                 <span class="icon">
+					      	 	<i class="fa fa-delicious"></i>
+					      	 </span>
+					       	 <span>豆瓣</span>
+					      </a>
+					    </div>
+					</div>
+			  </p>
+		</nav>
+		 <div class="box">
+		  <article class="media">
+		    <div class="media-left">
+		      <figure class="image is-64x64">
+		        <img src="../../img/qhl.png" alt="Image">
+		      </figure>
+		    </div>
+		    <div class="media-content">
+		      <div class="content">
+		        <p>
+		          <strong>Carry Qiu</strong> <small>187346709@qq.com</small> <small></small>
+		          <br>
+		       
+		        </p>
+		      </div>
+		      <nav class="level is-mobile">
+		        <div class="level-left">
+		          <a class="level-item">
+		            <span class="icon is-small"><i class="fa fa-reply"></i></span>
+		          </a>
+		          <a class="level-item">
+		            <span class="icon is-small"><i class="fa fa-retweet"></i></span>
+		          </a>
+		          <a class="level-item">
+		            <span class="icon is-small"><i class="fa fa-heart"></i></span>
+		          </a>
+		        </div>
+		      </nav>
+		    </div>
+		  </article>
+		</div>
+
+		</div>
+		<script src="../../js/clipboard.min.js"></script>
+		<script src="../../js/common.js"></script>
+		<script src="../../js/left-code.js"></script>
+	</body>
+</html>

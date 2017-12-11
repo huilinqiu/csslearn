@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		 <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=no">
+		<title>position</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+		<!--<link rel="stylesheet" href="../../lib/font-awesome.css">-->
+		<!--<link rel="stylesheet" href="../../lib/css/bulma.css">-->
+		<link rel="stylesheet" href="../../css/style.css">
+	</head>
+	<body>
+		<div class="container">
+			<nav class="panel is-unselectable">
+			<p class="panel-heading has-text-info">
+				display&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a class="button is-link m-copy">复制本页链接</a>
+			    <a class="button is-success">
+			    	<span>分享</span>
+			    	<span class="icon">
+			    		<i class="fa fa-caret-up"></i>
+			    	</span>
+			    </a>
+				<a class="button is-pulled-right" href="../quicksearch.html">上页</a>
+			</p>
+			<a class="panel-block m-background">
+				 <span>语法：</span>  
+			</a>
+			<div class="panel-block control">
+				<ul>
+					<li>
+						<strong>display：</strong> none | 
+						<mark class="m-border-bg">inline</mark> | block | list-item | inline-block | table | inline-table | table-caption | table-cell | table-row | table-row-group | table-column | table-column-group | table-footer-group | table-header-group | 
+						<ins class="m-title" title="css3">
+							run-in
+						</ins> | 
+						<ins class="m-title" title="css3">
+							box
+						</ins> | 
+						<ins class="m-title" title="css3">
+							inline-box
+						</ins> | 
+						<ins class="m-title" title="css3">
+							flexbox
+						</ins> | 
+						<ins class="m-title" title="css3">
+							inline-flexbox
+						</ins> | 
+						<ins class="m-title" title="css3">
+							flex
+						</ins> | 
+						<ins class="m-title" title="css3">
+							inline-flex
+						</ins> | 
+					</li>
+					<li>
+						<strong>默认值：</strong><span class="m-border-bg">inline</span>
+					</li>
+					<li>
+						<strong>适用于：</strong><span>所有元素</span>
+					</li>
+					<li>
+						<strong>继承性：</strong><span>无</span>
+					</li>
+					<li>
+						<strong>动画性：</strong><span>否</span>
+					</li>
+					<li>
+						<strong>计算值：</strong><span>指定的值，除浮动，绝对定位和根元素外</span>
+					</li>
+					<li>
+						<strong>媒体：</strong><span>视觉</span>
+					</li>
+				</ul>
+			</div>
+			<a class="panel-block m-background">
+				 <span>取值：</span>  
+			</a>
+			<div class="panel-block control">
+				<ul>
+					<li>
+						<strong>none：</strong><span>隐藏对象。与visibility属性的hidden值不同，其不为被隐藏的对象保留其物理空间。</span>
+					</li>
+					<li>
+						<strong>inine：</strong><span>指定对象为内联元素。</span>
+					</li>
+					<li>
+						<strong>block：</strong><span>指定对象为块元素。</span>
+					</li>
+					<li>
+						<strong>list-item：</strong><span>指定对象为列表项目。</span>
+					</li>
+					<li>
+						<strong>inline-block：</strong><span>指定对象为内联块元素。（CSS2）</span>
+					</li>
+					<li>
+						<strong>table：</strong><span>指定对象作为块元素级的表格。类同于html标签&lt;table&gt;（CSS2）</span>
+					</li>
+					<li>
+						<strong>inline-table：</strong><span>指定对象作为内联元素级的表格。类同于html标签&lt;table&gt;（CSS2）</span>
+					</li>
+					<li>
+						<strong>table-caption：</strong><span>指定对象作为表格标题。类同于html标签&lt;caption&gt;（CSS2）</span>
+					</li>
+					<li>
+						<strong>table-cell：</strong><span>指定对象作为表格单元格。类同于html标签&lt;td&gt;（CSS2）</span>
+					</li>
+					<li>
+						<strong>table-row：</strong><span>指定对象作为表格行。类同于html标签&lt;tr&gt;（CSS2）。</span>
+					</li>
+					<li>
+						<strong>table-row-group：</strong><span>指定对象作为表格行组。类同于html标签&lt;tbody&gt;（CSS2）</span>
+					</li>
+					<li>
+						<strong>table-column：</strong><span>指定对象作为表格列。类同于html标签&lt;col&gt;（CSS2）</span>
+					</li>
+					<li>
+						<strong>table-column-group：</strong><span>指定对象作为表格列组显示。类同于html标签&lt;colgroup&gt;（CSS2）</span>
+					</li>
+					<li>
+						<strong>table-header-group：</strong><span>指定对象作为表格标题组。类同于html标签&lt;thead&gt;（CSS2）</span>
+					</li>
+					<li>
+						<strong>table-footer-group：</strong><span>指定对象作为表格脚注组。类同于html标签&lt;tfoot&gt;（CSS2）</span>
+					</li>
+					<li>
+						<strong>run-in：</strong><span>根据上下文决定对象是内联对象还是块级对象。（CSS3）</span>
+					</li>
+					<li>
+						<strong>box：</strong><span>将对象作为弹性伸缩盒显示。（伸缩盒最老版本）（CSS3）</span>
+					</li>
+					<li>
+						<strong>inline-box：</strong><span>将对象作为内联块级弹性伸缩盒显示。（伸缩盒最老版本）（CSS3）</span>
+					</li>
+					<li>
+						<strong>flexbox：</strong><span>将对象作为弹性伸缩盒显示。（伸缩盒过渡版本）（CSS3）</span>
+					</li>
+					<li>
+						<strong>inline-flexbox：</strong><span>将对象作为内联块级弹性伸缩盒显示。（伸缩盒过渡版本）（CSS3）</span>
+					</li>
+					<li>
+						<strong>flex：</strong><span>将对象作为弹性伸缩盒显示。（伸缩盒最新版本）（CSS3）</span>
+					</li>
+					<li>
+						<strong>inline-flex：</strong><span>将对象作为内联块级弹性伸缩盒显示。（伸缩盒最新版本）（CSS3）</span>
+					</li>
+					<li>
+						<strong>*</strong><span>CSS3新增属性可能存在描述错误及变更，仅供参考，持续更新</span>
+					</li>
+				</ul>
+			</div>
+			<a class="panel-block m-background">
+				 <span>说明：</span>  
+			</a>
+			<div class="panel-block control">
+				<ul>
+					<li>
+						<strong>设置或检索对象是否及如何显示。：</strong><span>如果display设置为none，float及position属性定义将不生效；如果position既不是static也不是relative或者float不是none或者元素是根元素，
+							当display:inline-table时，display的计算值为table；当display:inline | inline-block | run-in | table-* 系时，display的计算值为block，其它情况为指定值；IE6,7支持inline元素转换成
+							inline-block，但不支持block元素转换成inline-block，所以非inline元素在IE6,7下要转换成inline-block，需先转换成inline，然后触发hasLayout，以此来获得和inline-block类似的效果；你可以这样：</span>
+					</li>
+					<li>
+						<div class="m-blockquote">
+							<blockquote>
+								<span>div {</span><br />
+								<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: inline-block;</span><br />
+								<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*display: inline;</span><br />
+								<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*zoom: 1;</span><br />
+								<span>}</span>
+							</blockquote>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<a class="panel-block m-background">
+				 <span>兼容性：</span>  
+			</a>
+			<div class="panel-block control">
+				<ul>
+					<li>
+						<div class="m-block m-green"></div><span>= 支持</span>
+						<div class="m-block m-red"></div><span>= 不支持</span>
+						<div class="m-block m-pink"></div><span>= 部分支持</span>
+					</li>
+					<li class="m-space"></li>
+					<li>
+						<table class="table is-bordered">
+						  <thead>
+						    <tr>
+						      <th class="m-blue"><abbr title="values">Values</abbr></th>
+						      <th>Basic Support<sup>#1</sup></th>
+						      <th>inline-block</th>
+						      <th>table系<sup>#2</sup></th>
+						      <th>run-in</th>
+						      <th>box | inline-box</th>
+						      <th>flexbox | inline-flexbox</th>
+						      <th>flex | inline-flex</th>
+						    </tr>
+						  </thead>
+						  <tfoot>
+						   <tr>
+						      <th class="m-blue"><abbr title="values">Values</abbr></th>
+						      <th>Basic Support<sup>#1</sup></th>
+						      <th>inline-block</th>
+						      <th>table系<sup>#2</sup></th>
+						      <th>run-in</th>
+						      <th>box | inline-box</th>
+						      <th>flexbox | inline-flexbox</th>
+						      <th>flex | inline-flex</th>
+						    </tr>
+						  </tfoot>
+						  <tbody>
+						    <tr>
+						      <th rowspan="2" class="m-blue">IE</th>
+						      <td rowspan="2" class="m-green">6.0+</td>
+						      <td class="m-pink">6.0-7.0#3</td>
+						      <td class="m-red">6.0-7.0</td>
+						      <td class="m-red">6.0-7.0</td>
+						      <td rowspan="2" class="m-red">6.0-11.0</td>
+						      <td class="m-red">6.0-9.0</td>
+						      <td class="m-red">6.0-10.0</td>
+						    </tr>
+						    <tr>
+						    	<td class="m-green">8.0+</td>
+						    	<td class="m-green">8.0+</td>
+						    	<td class="m-green">8.0+</td>
+						    	<td class="m-green">10.0-11.0<sup>-ms-</sup></td>
+						    	<td class="m-green">11.0+</td>
+						    </tr>
+						    <tr>
+						      <th rowspan="2" class="m-blue">Firefox</th>
+						      <td rowspan="2" class="m-green">2.0+</td>
+						      <td rowspan="2" class="m-green">2.0+</td>
+						      <td rowspan="2" class="m-green">2.0+</td>
+						      <td class="m-red">2.0-25.0</td>
+						      <td rowspan="2" class="m-green">2.0-38.0<sup>-moz-</sup></td>
+						      <td rowspan="2" class="m-red">2.0-38.0</td>
+						      <td class="m-red">2.0-21.0</td>
+						    </tr>
+						    <tr>
+						    	<td class="m-green">26.0+</td>
+						    	<td class="m-green">22.0+</td>
+						    </tr>
+						    <tr>
+						      <th rowspan="3" class="m-blue">Chrome</th>
+						      <td rowspan="3" class="m-green">4.0+</td>
+						      <td rowspan="3" class="m-green">4.0+</td>
+						      <td rowspan="3" class="m-green">4.0+</td>
+						      <td rowspan="3" class="m-green">4.0+</td>
+						      <td rowspan="3" class="m-green">4.0-43.0<sup>-webkit-</sup></td>
+						      <td rowspan="3" class="m-red">4.0-43.0</td>
+						      <td class="m-red">4.0-20.0</td>
+						    </tr>
+						    <tr>
+						    	<td class="m-green">21.0+<sup>-webkit-</sup></td>
+						    </tr>
+						    <tr>
+						    	<td class="m-green">29.0+</td>
+						    </tr>
+						     <tr>
+						      <th rowspan="3" class="m-blue">Safari</th>
+						      <td rowspan="3" class="m-green">6.0+</td>
+						      <td rowspan="3" class="m-green">6.0+</td>
+						      <td rowspan="3" class="m-green">6.0+</td>
+						      <td rowspan="3" class="m-green">6.0+</td>
+						      <td rowspan="3" class="m-green">3.1-8.1<sup>-webkit-</sup></td>
+						      <td rowspan="3" class="m-red">3.1-8.1</td>
+						      <td class="m-red">6.0+</td>
+						    </tr>
+						    <tr>
+						    	<td class="m-green">6.1+<sup>-webkit-</sup></td>
+						    </tr>
+						    <tr>
+						    	<td class="m-green">9.0+</td>
+						    </tr>
+						    <tr>
+						      <th rowspan="2" class="m-blue">Opera</th>
+						      <td rowspan="2" class="m-green">15.0+</td>
+						      <td rowspan="2" class="m-green">15.0+</td>
+						      <td rowspan="2" class="m-green">15.0+</td>
+						      <td rowspan="2" class="m-green">15.0+</td>
+						      <td rowspan="2" class="m-green">15.0-28.0<sup>-webkit-</sup></td>
+						      <td rowspan="2" class="m-red">15.0-28.0</td>
+						      <td class="m-green">15.0+<sup>-webkit-</sup></td>
+						    </tr>
+						    <tr>
+						    	<td class="m-green">17.0+</td>
+						    </tr>
+						    <tr>
+						      <th rowspan="3" class="m-blue">IOS Safari</th>
+						      <td rowspan="3" class="m-green">6.0+</td>
+						      <td rowspan="3" class="m-green">6.0+</td>
+						      <td rowspan="3" class="m-green">6.0+</td>
+						      <td rowspan="3" class="m-green">6.0+</td>
+						      <td rowspan="3" class="m-green">3.2-8.1<sup>-webkit-</sup></td>
+						      <td rowspan="3" class="m-red">3.2-8.1</td>
+						      <td class="m-red">6.0-6.1</td>
+						    </tr>
+						    <tr>
+						    	<td class="m-green">7.0+<sup>-webkit-</sup></td>
+						    </tr>
+						    <tr>
+						    	<td class="m-green">9.0+</td>
+						    </tr>
+						    <tr>
+						      <th rowspan="2" class="m-blue">Android Browser</th>
+						      <td rowspan="2" class="m-green">2.1+</td>
+						      <td rowspan="2" class="m-green">2.1+</td>
+						      <td rowspan="2" class="m-green">2.1+</td>
+						      <td rowspan="2" class="m-green">2.1+</td>
+						      <td rowspan="2" class="m-green">2.1-4.4.4<sup>--webkit</sup></td>
+						      <td rowspan="2" class="m-red">2.1-4.4.4</td>
+						      <td class="m-red">2.1-4.3</td>
+						    </tr>
+						    <tr>
+						    	<td class="m-green">4.4+</td>
+						    </tr>
+						    <tr>
+						      <th rowspan="3" class="m-blue">Android Chrome</th>
+						      <td rowspan="3" class="m-green">18.0+</td>
+						      <td rowspan="3" class="m-green">18.0+</td>
+						      <td rowspan="3" class="m-green">18.0+</td>
+						      <td rowspan="3" class="m-green">18.0+</td>
+						      <td rowspan="3" class="m-green">18.0-40.0<sup>-webkit-</sup></td>
+						      <td rowspan="3" class="m-red">18.0-40.0</td>
+						      <td class="m-red">18.0-19.0</td>
+						    </tr>
+						    <tr>
+						    	<td class="m-green">20.0+<sup>-webkit-</sup></td>
+						    </tr>
+						     <tr>
+						    	<td class="m-green">28.0+</td>
+						    </tr>
+						  </tbody>
+						</table>
+					</li>
+					<li>1.Basic Support包含值：none | inline | block | list-item | inline-block</li>
+					<li>2.table系包含值：table | inline-table | table-caption | table-cell | table-row | table-row-group | table-column | table-column-group | table-footer-group | table-header-group</li>
+					<li>3.IE6,7只支持inline元素设置为inline-block，其它类型元素均不可以</li>
+				</ul>
+			</div>
+			<a class="panel-block m-background">
+				 <span>示例：</span>  
+			</a>
+			<div class="panel-block control">
+				<textarea class="textarea" placeholder="textarea"></textarea>
+			</div>
+			<a href="#" class="button is-link m-run-html">运行</a>
+			<a href="#" class="button is-success is-pulled-right m-copy-code">复制</a>
+			
+			<p class="">
+			     <div class="m-dropdown-menu" id="dropdown-menu" role="menu">
+					    <div class="dropdown-content">
+					      <a href="#" class="dropdown-item">
+					      	 <span class="icon">
+					      	 	<i class="fa fa-weibo"></i>
+					      	 </span>
+					       	 <span>新浪微博</span>
+					      </a>
+					      <a class="dropdown-item">
+			                <span class="icon">
+					      	 	<i class="fa fa-weixin"></i>
+					      	 </span>
+					       	 <span>微信</span>
+					      </a>
+					      <a href="#" class="dropdown-item">
+					        <span class="icon">
+					      	 	<i class="fa fa-qq"></i>
+					      	 </span>
+					       	 <span>QQ空间</span>
+					      </a>
+					      <a href="#" class="dropdown-item">
+					         <span class="icon">
+					      	 	<i class="fa fa-renren"></i>
+					      	 </span>
+					       	 <span>人人网</span>
+					      </a>
+					      <a href="#" class="dropdown-item">
+			                 <span class="icon">
+					      	 	<i class="fa fa-delicious"></i>
+					      	 </span>
+					       	 <span>豆瓣</span>
+					      </a>
+					    </div>
+					</div>
+			  </p>
+		</nav>
+		 <div class="box">
+		  <article class="media">
+		    <div class="media-left">
+		      <figure class="image is-64x64">
+		        <img src="../../img/qhl.png" alt="Image">
+		      </figure>
+		    </div>
+		    <div class="media-content">
+		      <div class="content">
+		        <p>
+		          <strong>Carry Qiu</strong> <small>187346709@qq.com</small> <small></small>
+		          <br>
+		       
+		        </p>
+		      </div>
+		      <nav class="level is-mobile">
+		        <div class="level-left">
+		          <a class="level-item">
+		            <span class="icon is-small"><i class="fa fa-reply"></i></span>
+		          </a>
+		          <a class="level-item">
+		            <span class="icon is-small"><i class="fa fa-retweet"></i></span>
+		          </a>
+		          <a class="level-item">
+		            <span class="icon is-small"><i class="fa fa-heart"></i></span>
+		          </a>
+		        </div>
+		      </nav>
+		    </div>
+		  </article>
+		</div>
+
+		</div>
+		<script src="../../js/clipboard.min.js"></script>
+		<script src="../../js/common.js"></script>
+		<script src="../../js/display-code.js"></script>
+	</body>
+</html>
