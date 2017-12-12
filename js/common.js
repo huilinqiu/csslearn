@@ -45,3 +45,7 @@
 		}
 		
 	});
+
+// 回到上页，采取history back()方法
+   	var prevPage = document.querySelector('.container .panel-heading a.is-pulled-right');
+
