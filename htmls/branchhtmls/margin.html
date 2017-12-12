@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		 <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=no">
-		<title>min-width</title>
+		<title>margin</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
 		<!--<link rel="stylesheet" href="../../lib/font-awesome.css">-->
@@ -14,7 +14,7 @@
 		<div class="container">
 			<nav class="panel is-unselectable">
 			<p class="panel-heading has-text-info">
-				<strong class="has-text-info">min-width</strong>
+				<strong class="has-text-info">margin</strong>
 				<a class="button is-link m-copy">复制本页链接</a>
 			    <a class="button is-success">
 			    	<span>分享</span>
@@ -30,22 +30,25 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>min-width：</strong><span>&lt;length&gt; | &lt;percentage&gt;</span>
+						<strong>margin：</strong><span>[ &lt;length&gt; | &lt;percentage&gt; | auto ]{1,4}</span>
 					</li>
 					<li>
-						<strong>默认值：</strong><span class="m-border-bg">0</span>
+						<strong>默认值：</strong><span class="m-border-bg">看每个独立属性</span>
 					</li>
 					<li>
-						<strong>适用于：</strong><span>除非置换内联元素，table-row, table-row-group之外的所有元素</span>
+						<strong>适用于：</strong><span>所有元素，除非 table | inline-table | table-caption 的表格类元素之外</span>
 					</li>
 					<li>
 						<strong>继承性：</strong><span>无</span>
 					</li>
 					<li>
-						<strong>动画性：</strong><span>当值为&lt;length&gt; | &lt;percentage&gt;时</span>
+						<strong>动画性：</strong><span>是</span>
 					</li>
 					<li>
-						<strong>计算值：</strong><span>指定的值</span>
+						<strong>计算值：</strong><span>看每个独立属性</span>
+					</li>
+					<li>
+						<strong>相关属性：</strong><span>[ margin-top ] || [ margin-right ] || [ margin-bottom ] || [ margin-left ]</span>
 					</li>
 				</ul>
 			</div>
@@ -55,10 +58,13 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>&lt;length&gt;：</strong><span>用长度值来定义最小宽度。不允许负值。</span>
+						<strong>auto:</strong><span>水平（默认）书写模式下，margin-top/margin-bottom计算值为0，margin-left/margin-right取决于可用空间。详见：margin系列之keyword auto</span>
 					</li>
 					<li>
-						<strong>&lt;percentage&gt;：</strong><span>用百分比来定义最小宽度。不允许负值。</span>
+						<strong>&lt;length&gt;：</strong><span>用长度值来定义外补白。可以为负值</span>
+					</li>
+					<li>
+						<strong>&lt;percentage&gt;：</strong><span>用百分比来定义外补白。水平（默认）书写模式下，参照其包含块 width 进行计算，其它情况参照 height ，可以为负值</span>
 					</li>
 				</ul>
 			</div>
@@ -68,17 +74,42 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>设置或检索对象的最小宽度。</strong>
+						<strong>检索或设置对象四边的外延边距。</strong>
 					</li>
 					<li>
-						<span>如果min-width属性的值大于max-width属性的值，max-width将会自动以min-width的值作为自己的值。</span>
+						<span>如果提供全部四个参数值，将按上、右、下、左的顺序作用于四边。</span>
 					</li>
 					<li>
-						<span>IE6尚不支持此属性。</span>
+						<span>如果只提供一个，将用于全部的四边。</span>
 					</li>
 					<li>
-						<span>对应的脚本特性为minWidth。</span>
+						<span>如果提供两个，第一个用于上、下，第二个用于左、右。</span>
 					</li>
+					<li>
+						<span>如果提供三个，第一个用于上，第二个用于左、右，第三个用于下。</span>
+					</li>
+					<li>
+						<span>非替代(non-Replaced)行内元素可以使用该属性设置左、右两边的外补丁；若要设置上、下两边的外补丁，必须先使该对象表现为块级或内联块级。</span>
+					</li>
+					<li>
+						<span>外延边距始终透明。</span>
+					</li>
+					<li>
+						<strong>某些相邻的margin会发生合并(有border时候，不为相邻)，我们称之为margin折叠：</strong>
+					</li>
+					<li>
+						<strong>margin折叠常规认知：</strong>
+					</li>
+					<li>
+						<ul class="m-ul-list">
+							<li>margin折叠只发生在块级元素上；</li>
+							<li>浮动元素的margin不与任何margin发生折叠；</li>
+							<li>设置了属性overflow且值不为visible的块级元素，将不与它的子元素发生margin折叠；</li>
+							<li>绝对定位元素的margin不与任何margin发生折叠；</li>
+							<li>根元素的margin不与其它任何margin发生折叠；</li>
+						</ul>
+					</li>
+					<li>对应的脚本特性为margin。</li>
 				</ul>
 			</div>
 			<a class="panel-block m-background">
@@ -109,18 +140,15 @@
 						  </thead>
 						  <tbody>
 						     <tr>
-						     	<th rowspan="2" >Basic Support</th>
-						     	<td class="m-red">6.0+</td>
-						     	<td rowspan="2" class="m-green">2.0+</td>
-						     	<td rowspan="2" class="m-green">4.0+</td>
-						     	<td rowspan="2" class="m-green">3.1+</td>
-						     	<td rowspan="2" class="m-green">4.0+</td>
-						     	<td rowspan="2" class="m-green">3.2+</td>
-						     	<td rowspan="2" class="m-green">2.1+</td>
-						     	<td rowspan="2" class="m-green">18.0+</td>
-						     </tr>
-						     <tr>
-						     	<td class="m-green">7.0+</td>
+						     	<th>Basic Support</th>
+						     	<td class="m-green">6.0+</td>
+						     	<td class="m-green">2.0+</td>
+						     	<td class="m-green">4.0+</td>
+						     	<td class="m-green">3.1+</td>
+						     	<td class="m-green">3.5+</td>
+						     	<td class="m-green">3.2+</td>
+						     	<td class="m-green">2.1+</td>
+						     	<td class="m-green">18.0+</td>
 						     </tr>
 						  </tbody>
 						</table>
@@ -223,6 +251,6 @@
 		</div>
 		<script src="../../js/clipboard.min.js"></script>
 		<script src="../../js/common.js"></script>
-		<script src="../../js/min-width-code.js"></script>
+		<script src="../../js/margin-code.js"></script>
 	</body>
 </html>

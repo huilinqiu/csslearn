@@ -30,7 +30,7 @@
 		clipboard.copy(positioncode);
 	});
 	runhtml.addEventListener('click',function(){
-		var newwindow = window.open('','_blank','');
+		var newwindow = window.open('','_blank','height=400,width=600,top=0,left=0');
 		newwindow.document.write(positioncode);
 		newwindow.focus();
 	});

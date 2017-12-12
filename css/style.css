@@ -166,4 +166,32 @@ body {
 .toTop i.fa {
 	line-height: 0.5em;
 }
+.m-ul-list {
+	list-style: disc;
+}
+.m-ul-list li {
+	margin-left: 30px;
+}
+.m-back {
+	position: fixed;
+	bottom: 80px;
+	right: 20px;
+}
+.m-back .button {
+	height: 3.2em;
+	width: 79px;
+}
+.m-back:hover {
+	animation: myanim 0.8s linear;
+}
+@-webkit-keyframes myanim{
+	from{
+		transform: rotateX(0deg);
+		opacity: 1;
+	}
+	to{
+		transform: rotateX(180deg);
+		opacity: 0;
+	}
+}
 

@@ -46,6 +46,16 @@
 		
 	});
 
-// 回到上页，采取history back()方法
-   	var prevPage = document.querySelector('.container .panel-heading a.is-pulled-right');
+  	// 回到上一级
+  	var back = document.querySelector('.m-back');
+  	var backup = document.querySelector('.m-back a.m-back-start');
+  	var backhello = document.querySelector('.m-back a.m-back-end');
+  	back.addEventListener('mouseenter',function(){
+  		backup.classList.add('is-hidden');
+  		backhello.classList.remove('is-hidden');
+  	});
+  	back.addEventListener('mouseleave',function(){
+  		backup.classList.remove('is-hidden');
+  		backhello.classList.add('is-hidden');
+  	});
 

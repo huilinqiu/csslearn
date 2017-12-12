@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		 <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=no">
-		<title>min-width</title>
+		<title>margin-right</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
 		<!--<link rel="stylesheet" href="../../lib/font-awesome.css">-->
@@ -14,7 +14,7 @@
 		<div class="container">
 			<nav class="panel is-unselectable">
 			<p class="panel-heading has-text-info">
-				<strong class="has-text-info">min-width</strong>
+				<strong class="has-text-info">margin-right</strong>
 				<a class="button is-link m-copy">复制本页链接</a>
 			    <a class="button is-success">
 			    	<span>分享</span>
@@ -30,22 +30,25 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>min-width：</strong><span>&lt;length&gt; | &lt;percentage&gt;</span>
+						<strong>margin-right：</strong><span>&lt;length&gt; | &lt;percentage&gt; | auto</span>
 					</li>
 					<li>
 						<strong>默认值：</strong><span class="m-border-bg">0</span>
 					</li>
 					<li>
-						<strong>适用于：</strong><span>除非置换内联元素，table-row, table-row-group之外的所有元素</span>
+						<strong>适用于：</strong><span>所有元素，除非 table | inline-table | table-caption 的表格类元素之外和非替代行内元素之外</span>
 					</li>
 					<li>
 						<strong>继承性：</strong><span>无</span>
 					</li>
 					<li>
-						<strong>动画性：</strong><span>当值为&lt;length&gt; | &lt;percentage&gt;时</span>
+						<strong>动画性：</strong><span>是</span>
 					</li>
 					<li>
-						<strong>计算值：</strong><span>指定的值</span>
+						<strong>计算值：</strong><span>指定的百分比、绝对长度或auto</span>
+					</li>
+					<li>
+						<strong>相关属性：</strong><span>[ margin ] || [ margin-top ] || [ margin-bottom ] || [ margin-left ]</span>
 					</li>
 				</ul>
 			</div>
@@ -55,10 +58,13 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>&lt;length&gt;：</strong><span>用长度值来定义最小宽度。不允许负值。</span>
+						<strong>auto:</strong><span>水平（默认）书写模式下，其计算值取决于可用空间</span>
 					</li>
 					<li>
-						<strong>&lt;percentage&gt;：</strong><span>用百分比来定义最小宽度。不允许负值。</span>
+						<strong>&lt;length&gt;：</strong><span>用长度值来定义外补白。可以为负值</span>
+					</li>
+					<li>
+						<strong>&lt;percentage&gt;：</strong><span>用百分比来定义外补白。水平（默认）书写模式下，参照其包含块 width 进行计算，其它情况参照 height ，可以为负值</span>
 					</li>
 				</ul>
 			</div>
@@ -68,17 +74,15 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>设置或检索对象的最小宽度。</strong>
+						<strong>检索或设置对象右边的外延边距。</strong>
 					</li>
 					<li>
-						<span>如果min-width属性的值大于max-width属性的值，max-width将会自动以min-width的值作为自己的值。</span>
+						<span>所有行内元素均可使用该属性设置右边距。</span>
 					</li>
 					<li>
-						<span>IE6尚不支持此属性。</span>
+						<span>外延边距始终透明。</span>
 					</li>
-					<li>
-						<span>对应的脚本特性为minWidth。</span>
-					</li>
+					<li>对应的脚本特性为marginRight。</li>
 				</ul>
 			</div>
 			<a class="panel-block m-background">
@@ -109,18 +113,15 @@
 						  </thead>
 						  <tbody>
 						     <tr>
-						     	<th rowspan="2" >Basic Support</th>
-						     	<td class="m-red">6.0+</td>
-						     	<td rowspan="2" class="m-green">2.0+</td>
-						     	<td rowspan="2" class="m-green">4.0+</td>
-						     	<td rowspan="2" class="m-green">3.1+</td>
-						     	<td rowspan="2" class="m-green">4.0+</td>
-						     	<td rowspan="2" class="m-green">3.2+</td>
-						     	<td rowspan="2" class="m-green">2.1+</td>
-						     	<td rowspan="2" class="m-green">18.0+</td>
-						     </tr>
-						     <tr>
-						     	<td class="m-green">7.0+</td>
+						     	<th>Basic Support</th>
+						     	<td class="m-green">6.0+</td>
+						     	<td class="m-green">2.0+</td>
+						     	<td class="m-green">4.0+</td>
+						     	<td class="m-green">3.1+</td>
+						     	<td class="m-green">3.5+</td>
+						     	<td class="m-green">3.2+</td>
+						     	<td class="m-green">2.1+</td>
+						     	<td class="m-green">18.0+</td>
 						     </tr>
 						  </tbody>
 						</table>
@@ -223,6 +224,6 @@
 		</div>
 		<script src="../../js/clipboard.min.js"></script>
 		<script src="../../js/common.js"></script>
-		<script src="../../js/min-width-code.js"></script>
+		<script src="../../js/margin-right-code.js"></script>
 	</body>
 </html>

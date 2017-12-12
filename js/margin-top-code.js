@@ -4,17 +4,19 @@
 						'<html lang="zh-cmn-Hans">\n'+
 						'<head>\n'+
 						'<meta charset="utf-8" />\n'+
-						'<title>min-height_CSS参考手册_web前端开发参考手册系列</title>\n'+
+						'<title>margin-top_CSS参考手册_web前端开发参考手册系列</title>\n'+
 						'<meta name="author" content="制作者：CarryQiu,联系：187346709@qq.com" />\n'+
 						'<style>\n'+
 						'.test {\n'+
-						'	min-height: 200px;\n'+
+						'	margin-top: 50px;\n'+
 						'	background: #eee;\n'+
 						'}\n'+
 						'</style>\n'+
 						'</head>\n'+
 						'<body>\n'+
-						'<div class="test">我的最小高度为200</div>\n'+
+						'<div class="test">'+
+						'	<P>注意我距顶边的距离</P>\n'+
+						'</div>\n'+
 						'</body>\n'+
 						'</html>';
 	textarea.innerText = positioncode;
