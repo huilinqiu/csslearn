@@ -14,7 +14,7 @@
 		<div class="container">
 			<nav class="panel is-unselectable">
 			<p class="panel-heading has-text-info">
-				<strong class="has-text-info">float</strong>
+				<strong class="has-text-info">min-height</strong>
 				<a class="button is-link m-copy">复制本页链接</a>
 			    <a class="button is-success">
 			    	<span>分享</span>
@@ -30,25 +30,22 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>float：</strong><span class="m-border-bg">none</span> | left | right
+						<strong>min-height：</strong><span>&lt;length&gt; | &lt;percentage&gt;</span>
 					</li>
 					<li>
-						<strong>默认值：</strong><span class="m-border-bg">none</span>
+						<strong>默认值：</strong><span class="m-border-bg">0</span>
 					</li>
 					<li>
-						<strong>适用于：</strong><span>所有元素</span>
+						<strong>适用于：</strong><span>除非置换内联元素，table-row, table-row-group之外的所有元素</span>
 					</li>
 					<li>
 						<strong>继承性：</strong><span>无</span>
 					</li>
 					<li>
-						<strong>动画性：</strong><span>否</span>
+						<strong>动画性：</strong><span>当值为&lt;length&gt; | &lt;percentage&gt;时</span>
 					</li>
 					<li>
 						<strong>计算值：</strong><span>指定的值</span>
-					</li>
-					<li>
-						<strong>媒体：</strong><span>视觉</span>
 					</li>
 				</ul>
 			</div>
@@ -58,13 +55,10 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>none：</strong><span>设置对象不浮动</span>
+						<strong>&lt;length&gt;：</strong><span>用长度值来定义最小高度。不允许负值。</span>
 					</li>
 					<li>
-						<strong>left：</strong><span>设置对象浮在左边</span>
-					</li>
-					<li>
-						<strong>right：</strong><span>设置对象浮在右边</span>
+						<strong>&lt;percentage&gt;：</strong><span>用百分比来定义最小高度。不允许负值。</span>
 					</li>
 				</ul>
 			</div>
@@ -74,16 +68,16 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>该属性的值指出了对象是否及如何浮动。</strong><span>请参阅clear属性</span>
+						<strong>设置或检索对象的最小高度。</strong>
 					</li>
 					<li>
-						<span>如果float不是none，当display:inline-table时，display的计算值为table；当display:inline | inline-block | run-in | table-* 系时，display的计算值为block，其它情况为指定值；</span>
+						<span>如果min-height属性的值大于max-height属性的值，max-height将会自动以min-height的值作为自己的值。</span>
 					</li>
 					<li>
-						<span>float在绝对定位和display为none时不生效。</span>
+						<span>IE6尚不支持此属性。IE6的变通实现方法请参考 最小高度min-height实现详解。</span>
 					</li>
 					<li>
-						<span>对应的脚本特性为styleFloat（IE）或cssFloat（非IE）。(注意这里为styleFloat或cssFloat，而不是float)</span>
+						<span>对应的脚本特性为minHeight。</span>
 					</li>
 				</ul>
 			</div>
@@ -103,52 +97,34 @@
 						  <thead>
 						    <tr>
 						      <th class="m-blue"><abbr title="values">Values</abbr></th>
-						      <th>Basic Support</th>
+						      <th class="m-blue">IE</th>
+						      <th class="m-blue">Firefox</th>
+						      <th class="m-blue">Chrome</th>
+						      <th class="m-blue">Safari</th>
+						      <th class="m-blue">Opera</th>
+						      <th class="m-blue">IOS Safari</th>
+						      <th class="m-blue">Android Browser</th>
+						      <th class="m-blue">Android Chrome</th>
 						    </tr>
 						  </thead>
-						  <tfoot>
-						   <tr>
-						      <th class="m-blue"><abbr title="values">Values</abbr></th>
-						      <th>Basic Support</th>
-						    </tr>
-						  </tfoot>
 						  <tbody>
-						    <tr>
-						      <th class="m-blue">IE</th>
-						      <td class="m-green">6.0+</td>
-						    </tr>
-						    <tr>
-						      <th class="m-blue">Firefox</th>
-						      <td class="m-green">2.0+</td>
-						    </tr>
-						    <tr>
-						      <th class="m-blue">Chrome</th>
-						      <td class="m-green">4.0+</td>
-						    </tr>
 						     <tr>
-						      <th class="m-blue">Safari</th>
-						      <td class="m-green">3.1+</td>
-						    </tr>
-						    <tr>
-						      <th class="m-blue">Opera</th>
-						      <td class="m-green">7.0+</td>
-						    </tr>
-						    <tr>
-						      <th class="m-blue">IOS Safari</th>
-						      <td class="m-green">3.2+</td>
-						    </tr>
-						    <tr>
-						      <th class="m-blue">Android Browser</th>
-						      <td class="m-green">2.1+</td>
-						    </tr>
-						    <tr>
-						      <th class="m-blue">Android Chrome</th>
-						      <td class="m-green">18.0+</td>
-						    </tr>
+						     	<th rowspan="2" >Basic Support</th>
+						     	<td class="m-red">6.0+</td>
+						     	<td rowspan="2" class="m-green">2.0+</td>
+						     	<td rowspan="2" class="m-green">4.0+</td>
+						     	<td rowspan="2" class="m-green">3.1+</td>
+						     	<td rowspan="2" class="m-green">4.0+</td>
+						     	<td rowspan="2" class="m-green">3.2+</td>
+						     	<td rowspan="2" class="m-green">2.1+</td>
+						     	<td rowspan="2" class="m-green">18.0+</td>
+						     </tr>
+						     <tr>
+						     	<td class="m-green">7.0+</td>
+						     </tr>
 						  </tbody>
 						</table>
 					</li>
-					<li>1.Basic Support包含值：auto | rect(空格分隔)</li>
 				</ul>
 			</div>
 			<a class="panel-block m-background">
@@ -237,6 +213,6 @@
 		</div>
 		<script src="../../js/clipboard.min.js"></script>
 		<script src="../../js/common.js"></script>
-		<script src="../../js/float-code.js"></script>
+		<script src="../../js/min-height-code.js"></script>
 	</body>
 </html>

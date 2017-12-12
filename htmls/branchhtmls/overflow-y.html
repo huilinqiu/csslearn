@@ -14,7 +14,7 @@
 		<div class="container">
 			<nav class="panel is-unselectable">
 			<p class="panel-heading has-text-info">
-				<strong class="has-text-info">float</strong>
+				<strong class="has-text-info">overflow-y</strong>
 				<a class="button is-link m-copy">复制本页链接</a>
 			    <a class="button is-success">
 			    	<span>分享</span>
@@ -30,13 +30,31 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>float：</strong><span class="m-border-bg">none</span> | left | right
+						<strong>overflow-y：</strong><span>&lt;overflow-style&gt;</span>
 					</li>
 					<li>
-						<strong>默认值：</strong><span class="m-border-bg">none</span>
+						<strong>&lt;overflow-style&gt;=</strong><span class="m-border-bg">visible</span>| hidden | scroll | auto | 
+						<ins class="m-title" title="css3">
+							paged-x
+						</ins> | 
+						<ins class="m-title" title="css3">
+							paged-y
+						</ins> | 
+						<ins class="m-title" title="css3">
+							paged-x-controls
+						</ins> | 
+						<ins class="m-title" title="css3">
+							paged-y-controls
+						</ins> | 
+						<ins class="m-title" title="css3">
+							fragments
+						</ins>
 					</li>
 					<li>
-						<strong>适用于：</strong><span>所有元素</span>
+						<strong>默认值：</strong><span class="m-border-bg">visible</span>
+					</li>
+					<li>
+						<strong>适用于：</strong><span>块容器，伸缩盒容器，grid容器</span>
 					</li>
 					<li>
 						<strong>继承性：</strong><span>无</span>
@@ -47,9 +65,6 @@
 					<li>
 						<strong>计算值：</strong><span>指定的值</span>
 					</li>
-					<li>
-						<strong>媒体：</strong><span>视觉</span>
-					</li>
 				</ul>
 			</div>
 			<a class="panel-block m-background">
@@ -58,13 +73,34 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>none：</strong><span>设置对象不浮动</span>
+						<strong>visible：</strong><span>对溢出内容不做处理，内容可能会超出容器。</span>
 					</li>
 					<li>
-						<strong>left：</strong><span>设置对象浮在左边</span>
+						<strong>hidden：</strong><span>隐藏溢出容器的内容且不出现滚动条。</span>
 					</li>
 					<li>
-						<strong>right：</strong><span>设置对象浮在右边</span>
+						<strong>scroll：</strong><span>隐藏溢出容器的内容，溢出的内容将以卷动滚动条的方式呈现。</span>
+					</li>
+					<li>
+						<strong>auto：</strong><span>当内容没有溢出容器时不出现滚动条，当内容溢出容器时出现滚动条，按需出现滚动条。此为body对象和textarea的默认值。</span>
+					</li>
+					<li>
+						<strong>paged-x：</strong><span>TODO...（CSS3）</span>
+					</li>
+					<li>
+						<strong>paged-y：</strong><span>TODO...（CSS3）</span>
+					</li>
+					<li>
+						<strong>paged-x-controls：</strong><span>TODO...（CSS3）</span>
+					</li>
+					<li>
+						<strong>paged-y-controls：</strong><span>TODO...（CSS3）</span>
+					</li>
+					<li>
+						<strong>fragments：</strong><span>TODO...（CSS3）</span>
+					</li>
+					<li>
+						<strong>*：</strong><span class="has-text-danger">CSS3新增属性可能存在描述错误及变更，仅供参考，持续更新</span>
 					</li>
 				</ul>
 			</div>
@@ -74,16 +110,10 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>该属性的值指出了对象是否及如何浮动。</strong><span>请参阅clear属性</span>
+						<strong>复合属性。检索或设置对象处理溢出内容的方式。</strong><span>参阅overflow、overflow-x属性。overflow的效果等同于overflow-x + overflow-y。</span>
 					</li>
 					<li>
-						<span>如果float不是none，当display:inline-table时，display的计算值为table；当display:inline | inline-block | run-in | table-* 系时，display的计算值为block，其它情况为指定值；</span>
-					</li>
-					<li>
-						<span>float在绝对定位和display为none时不生效。</span>
-					</li>
-					<li>
-						<span>对应的脚本特性为styleFloat（IE）或cssFloat（非IE）。(注意这里为styleFloat或cssFloat，而不是float)</span>
+						<span>对应的脚本特性为overflowY。</span>
 					</li>
 				</ul>
 			</div>
@@ -103,52 +133,64 @@
 						  <thead>
 						    <tr>
 						      <th class="m-blue"><abbr title="values">Values</abbr></th>
-						      <th>Basic Support</th>
+						      <th class="m-blue">IE</th>
+						      <th class="m-blue">Firefox</th>
+						      <th class="m-blue">Chrome</th>
+						      <th class="m-blue">Safari</th>
+						      <th class="m-blue">Opera</th>
+						      <th class="m-blue">IOS Safari</th>
+						      <th class="m-blue">Android Browser</th>
+						      <th class="m-blue">Android Chrome</th>
 						    </tr>
 						  </thead>
-						  <tfoot>
-						   <tr>
-						      <th class="m-blue"><abbr title="values">Values</abbr></th>
-						      <th>Basic Support</th>
-						    </tr>
-						  </tfoot>
 						  <tbody>
-						    <tr>
-						      <th class="m-blue">IE</th>
-						      <td class="m-green">6.0+</td>
-						    </tr>
-						    <tr>
-						      <th class="m-blue">Firefox</th>
-						      <td class="m-green">2.0+</td>
-						    </tr>
-						    <tr>
-						      <th class="m-blue">Chrome</th>
-						      <td class="m-green">4.0+</td>
-						    </tr>
 						     <tr>
-						      <th class="m-blue">Safari</th>
-						      <td class="m-green">3.1+</td>
-						    </tr>
+						     	<th>Basic Support</th>
+						     	<td class="m-green">6.0+</td>
+						     	<td class="m-green">2.0+</td>
+						     	<td class="m-green">4.0+</td>
+						     	<td class="m-green">3.1+</td>
+						     	<td class="m-green">7.0+</td>
+						     	<td class="m-green">3.2+</td>
+						     	<td class="m-green">2.1+</td>
+						     	<td class="m-green">18.0+</td>
+						     </tr>
 						    <tr>
-						      <th class="m-blue">Opera</th>
-						      <td class="m-green">7.0+</td>
-						    </tr>
-						    <tr>
-						      <th class="m-blue">IOS Safari</th>
-						      <td class="m-green">3.2+</td>
-						    </tr>
-						    <tr>
-						      <th class="m-blue">Android Browser</th>
-						      <td class="m-green">2.1+</td>
-						    </tr>
-						    <tr>
-						      <th class="m-blue">Android Chrome</th>
-						      <td class="m-green">18.0+</td>
-						    </tr>
+						     	<th>Page-*</th>
+						     	<td class="m-red">11.0</td>
+						     	<td class="m-red">38.0</td>
+						     	<td class="m-red">43.0</td>
+						     	<td class="m-red">8.1</td>
+						     	<td class="m-red">28.0+</td>
+						     	<td class="m-red">8.1</td>
+						     	<td class="m-red">4.4.4+</td>
+						     	<td class="m-red">40.0</td>
+						     </tr>
+						     <tr>
+						     	<th>Page-*-controls</th>
+						     	<td class="m-red">11.0</td>
+						     	<td class="m-red">38.0</td>
+						     	<td class="m-red">43.0</td>
+						     	<td class="m-red">8.1</td>
+						     	<td class="m-red">28.0+</td>
+						     	<td class="m-red">8.1</td>
+						     	<td class="m-red">4.4.4+</td>
+						     	<td class="m-red">40.0</td>
+						     </tr>
+						     <tr>
+						     	<th>fragments</th>
+						     	<td class="m-red">11.0</td>
+						     	<td class="m-red">38.0</td>
+						     	<td class="m-red">43.0</td>
+						     	<td class="m-red">8.1</td>
+						     	<td class="m-red">28.0+</td>
+						     	<td class="m-red">8.1</td>
+						     	<td class="m-red">4.4.4+</td>
+						     	<td class="m-red">40.0</td>
+						     </tr>
 						  </tbody>
 						</table>
 					</li>
-					<li>1.Basic Support包含值：auto | rect(空格分隔)</li>
 				</ul>
 			</div>
 			<a class="panel-block m-background">
@@ -237,6 +279,6 @@
 		</div>
 		<script src="../../js/clipboard.min.js"></script>
 		<script src="../../js/common.js"></script>
-		<script src="../../js/float-code.js"></script>
+		<script src="../../js/overflow-y-code.js"></script>
 	</body>
 </html>

@@ -147,14 +147,23 @@ body {
 	border: 1px solid lightblue;
 	background: #fff0f0;
 }
-.container .panel-heading a:first-child {
+.container .panel-heading a:nth-child(2) {
 	position: absolute;
 	left: 85%;
 }
-.container .panel-heading a:nth-child(2) {
+.container .panel-heading a:nth-child(3) {
 	position: absolute;
 	left: 50%;	
 }
-.button {
-	
+.table td,.table th{
+   vertical-align: middle;
 }
+.toTop {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+}
+.toTop i.fa {
+	line-height: 0.5em;
+}
+

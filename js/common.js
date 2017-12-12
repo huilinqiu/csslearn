@@ -29,3 +29,19 @@
 		}
 	});	
   
+// 点击回到顶部按键
+	var toTop = document.querySelector('.toTop');
+	toTop.addEventListener('click',function(){
+		
+		var up = toTop.querySelector('.toTop i');
+		if(up.classList.contains('fa-arrow-circle-o-up')){
+			up.classList.remove('fa-arrow-circle-o-up');
+			up.classList.add('fa-arrow-circle-o-down');
+			document.body.scrollTop = document.documentElement.scrollTop = 0; 
+		}else{
+			up.classList.remove('fa-arrow-circle-o-down');
+			up.classList.add('fa-arrow-circle-o-up');
+			document.body.scrollTop = document.documentElement.scrollTop = document.getElementsByTagName('body')[0].scrollHeight; 
+		}
+		
+	});
