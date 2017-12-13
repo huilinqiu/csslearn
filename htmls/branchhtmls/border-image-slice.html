@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		 <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=no">
-		<title>padding</title>
+		<title>border-image-slice</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
 		<!--<link rel="stylesheet" href="../../lib/font-awesome.css">-->
@@ -14,7 +14,7 @@
 		<div class="container">
 			<nav class="panel is-unselectable">
 			<p class="panel-heading has-text-info">
-				<strong class="has-text-info">padding</strong>
+				<strong class="has-text-info">border-image-slice</strong>
 				<a class="button is-link m-copy">复制本页链接</a>
 			    <a class="button is-success">
 			    	<span>分享</span>
@@ -30,25 +30,22 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>padding：</strong><span>[ &lt;length&gt; | &lt;percentage&gt; ]{1,4}</span>
+						<strong>border-image-slice：</strong><span>[ &lt;number&gt; | &lt;percentage&gt; ]{1,4} && fill?</span>
 					</li>
 					<li>
-						<strong>默认值：</strong><span class="m-border-bg">看每个独立属性</span>
+						<strong>默认值：</strong><span class="m-border-bg">100%</span>
 					</li>
 					<li>
-						<strong>适用于：</strong><span>所有元素，除 table-row-group | table-header-group | table-footer-group | table-column-group | table-row 外</span>
+						<strong>适用于：</strong><span>所有元素，除table元素设置了 &lt;' border-collapse '&gt; 为collapse之外</span>
 					</li>
 					<li>
 						<strong>继承性：</strong><span>无</span>
 					</li>
 					<li>
-						<strong>动画性：</strong><span>是</span>
+						<strong>动画性：</strong><span>否</span>
 					</li>
 					<li>
-						<strong>计算值：</strong><span>看每个独立属性</span>
-					</li>
-					<li>
-						<strong>相关属性：</strong><span>[ padding-top ] || [ padding-right ] || [ padding-bottom ] || [ padding-left ]</span>
+						<strong>计算值：</strong><span>指定值</span>
 					</li>
 				</ul>
 			</div>
@@ -58,10 +55,13 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>&lt;length&gt;：</strong><span>用长度值来定义内补白。不允许负值</span>
+						<strong>&lt;number&gt;</strong><span>用浮点数指定宽度。不允许负值。</span>
 					</li>
 					<li>
-						<strong>&lt;percentage&gt;：</strong><span>用百分比来定义内补白。水平（默认）书写模式下，参照其包含块 width 进行计算，其它情况参照 height 。不允许负值</span>
+						<strong>&lt;percentage&gt;：</strong><span>用百分比指定宽度。参照其包含块区域进行计算。不允许负值。</span>
+					</li>
+					<li>
+						<strong>fill:</strong><span>保留裁减后的中间区域，其铺排方式遵循 &lt;' border-image-repeat '&gt; 的设定。</span>
 					</li>
 				</ul>
 			</div>
@@ -71,24 +71,12 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>检索或设置对象四边的内部边距。</strong>
+						<strong>设置或检索对象的边框背景图的分割方式。</strong><span></span>
 					</li>
 					<li>
-						<span>如果提供全部四个参数值，将按上、右、下、左的顺序作用于四边。</span>
+						<span>该属性指定从上，右，下，左方位来分隔图像，将图像分成4个角，4条边和中间区域共9份，中间区域始终是透明的（即没图像填充），除非加上关键字 fill。</span>
 					</li>
-					<li>
-						<span>如果只提供一个，将用于全部的四边。</span>
-					</li>
-					<li>
-						<span>如果提供两个，第一个用于上、下，第二个用于左、右。</span>
-					</li>
-					<li>
-						<span>如果提供三个，第一个用于上，第二个用于左、右，第三个用于下。</span>
-					</li>
-					<li>
-						<span>非替代(non-Replaced)行内元素可以使用该属性设置左、右两边的内补丁；若要设置上、下两边的内补丁，必须先使该对象表现为块级或内联块级。</span>
-					</li>
-					<li>对应的脚本特性为padding。</li>
+					<li>对应的脚本特性为borderImageSlice。</li>
 				</ul>
 			</div>
 			<a class="panel-block m-background">
@@ -119,15 +107,27 @@
 						  </thead>
 						  <tbody>
 						     <tr>
-						     	<th>Basic Support</th>
-						     	<td class="m-green">6.0+</td>
-						     	<td class="m-green">2.0+</td>
-						     	<td class="m-green">4.0+</td>
-						     	<td class="m-green">3.1+</td>
-						     	<td class="m-green">3.5+</td>
-						     	<td class="m-green">3.2+</td>
-						     	<td class="m-green">2.1+</td>
-						     	<td class="m-green">18.0+</td>
+						     	<th rowspan="3">Basic Support</th>
+						     	<td class="m-red">6.0-10.0</td>
+						     	<td class="m-red">2.0-3.0</td>
+						     	<td class="m-pink">4.0-14.0<sup>-webkit-</sup></td>
+						     	<td class="m-pink">3.1-5.1<sup>-webkit-</sup></td>
+						     	<td rowspan="3" class="m-green">15.0+</td>
+						     	<td class="m-pink">3.2-5.1<sup>-webkit-</sup></td>
+						     	<td class="m-pink">2.1-4.3<sup>-webkit-</sup></td>
+						     	<td rowspan="3" class="m-green">18.0+<sup>-webkit-</sup></td>
+						     </tr>
+						     <tr>
+						     	<td rowspan="2" class="m-green">11.0+</td>
+						     	<td class="m-pink">3.5-14.0<sup>-moz-</sup></td>
+						     	<td class="m-green">15.0<sup>-webkit-</sup></td>
+						     	<td rowspan="2" class="m-green">6.0+</td>
+						     	<td rowspan="2" class="m-green">6.1+</td>
+						     	<td rowspan="2" class="m-green">4.4-4.4.4</td>
+						     </tr>
+						     <tr>
+						     	<td class="m-green">15.0+</td>
+						     	<td class="m-green">16.0+</td>
 						     </tr>
 						  </tbody>
 						</table>
@@ -230,6 +230,6 @@
 		</div>
 		<script src="../../js/clipboard.min.js"></script>
 		<script src="../../js/common.js"></script>
-		<script src="../../js/padding-code.js"></script>
+		<script src="../../js/border-image-slice-code.js"></script>
 	</body>
 </html>

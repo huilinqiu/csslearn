@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		 <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=no">
-		<title>padding</title>
+		<title>border-top-left-radius</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
 		<!--<link rel="stylesheet" href="../../lib/font-awesome.css">-->
@@ -14,7 +14,7 @@
 		<div class="container">
 			<nav class="panel is-unselectable">
 			<p class="panel-heading has-text-info">
-				<strong class="has-text-info">padding</strong>
+				<strong class="has-text-info">border-top-left-radius</strong>
 				<a class="button is-link m-copy">复制本页链接</a>
 			    <a class="button is-success">
 			    	<span>分享</span>
@@ -30,13 +30,13 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>padding：</strong><span>[ &lt;length&gt; | &lt;percentage&gt; ]{1,4}</span>
+						<strong>border-top-left-radius：</strong><span>[ &lt;length&gt; | &lt;percentage&gt; ]{1,2}</span>
 					</li>
 					<li>
-						<strong>默认值：</strong><span class="m-border-bg">看每个独立属性</span>
+						<strong>默认值：</strong><span class="m-border-bg">0</span>
 					</li>
 					<li>
-						<strong>适用于：</strong><span>所有元素，除 table-row-group | table-header-group | table-footer-group | table-column-group | table-row 外</span>
+						<strong>适用于：</strong><span>所有元素</span>
 					</li>
 					<li>
 						<strong>继承性：</strong><span>无</span>
@@ -45,10 +45,7 @@
 						<strong>动画性：</strong><span>是</span>
 					</li>
 					<li>
-						<strong>计算值：</strong><span>看每个独立属性</span>
-					</li>
-					<li>
-						<strong>相关属性：</strong><span>[ padding-top ] || [ padding-right ] || [ padding-bottom ] || [ padding-left ]</span>
+						<strong>计算值：</strong><span>指定值</span>
 					</li>
 				</ul>
 			</div>
@@ -58,10 +55,10 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>&lt;length&gt;：</strong><span>用长度值来定义内补白。不允许负值</span>
+						<strong>&lt;length&gt;：</strong><span>用长度值设置对象的左上角(top-left)圆角半径长度。不允许负值。</span>
 					</li>
 					<li>
-						<strong>&lt;percentage&gt;：</strong><span>用百分比来定义内补白。水平（默认）书写模式下，参照其包含块 width 进行计算，其它情况参照 height 。不允许负值</span>
+						<strong>&lt;percentage&gt;：</strong><span>用百分比设置对象的左上角(top-left)圆角半径长度。不允许负值。</span>
 					</li>
 				</ul>
 			</div>
@@ -71,24 +68,12 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>检索或设置对象四边的内部边距。</strong>
+						<strong>设置或检索对象的左上角圆角边框。</strong><span>提供2个参数，2个参数以空格分隔，每个参数允许设置1个参数值，第1个参数表示水平半径，第2个参数表示垂直半径，如第2个参数省略，则默认等于第1个参数数。</span>
 					</li>
 					<li>
-						<span>如果提供全部四个参数值，将按上、右、下、左的顺序作用于四边。</span>
+						<span>如设置border-top-left-radius:5px 10px表示top-left这个角的水平圆角半径为5px，垂直圆角半径为10px。</span>
 					</li>
-					<li>
-						<span>如果只提供一个，将用于全部的四边。</span>
-					</li>
-					<li>
-						<span>如果提供两个，第一个用于上、下，第二个用于左、右。</span>
-					</li>
-					<li>
-						<span>如果提供三个，第一个用于上，第二个用于左、右，第三个用于下。</span>
-					</li>
-					<li>
-						<span>非替代(non-Replaced)行内元素可以使用该属性设置左、右两边的内补丁；若要设置上、下两边的内补丁，必须先使该对象表现为块级或内联块级。</span>
-					</li>
-					<li>对应的脚本特性为padding。</li>
+					<li>对应的脚本特性为borderTopLeftRadius。</li>
 				</ul>
 			</div>
 			<a class="panel-block m-background">
@@ -119,19 +104,31 @@
 						  </thead>
 						  <tbody>
 						     <tr>
-						     	<th>Basic Support</th>
-						     	<td class="m-green">6.0+</td>
-						     	<td class="m-green">2.0+</td>
+						     	<th rowspan="2">Basic Support</th>
+						     	<td class="m-red">6.0-8.0</td>
+						     	<td class="m-green">2.0-12.0#1<sup>-moz-</sup></td>
+						     	<td class="m-green">4.0-43.0<sup>-webkit-</sup></td>
+						     	<td class="m-green">3.1-8.1<sup>-webkit-</sup></td>
+						     	<td class="m-green">10.5-28.0<sup>-webkit-</sup></td>
+						     	<td class="m-green">3.2-8.1<sup>-webkit-</sup></td>
+						     	<td class="m-green">2.1-4.4.4<sup>-webkit-</sup></td>
+						     	<td class="m-green">18.0-40.0<sup>-webkit-</sup></td>
+						     </tr>
+						     <tr>
+						     	<td class="m-green">9.0+</td>
 						     	<td class="m-green">4.0+</td>
-						     	<td class="m-green">3.1+</td>
-						     	<td class="m-green">3.5+</td>
-						     	<td class="m-green">3.2+</td>
-						     	<td class="m-green">2.1+</td>
+						     	<td class="m-green">5.0+</td>
+						     	<td class="m-green">5.0+</td>
+						     	<td class="m-green">10.5+</td>
+						     	<td class="m-green">4.0+</td>
+						     	<td class="m-green">2.2+</td>
 						     	<td class="m-green">18.0+</td>
 						     </tr>
 						  </tbody>
 						</table>
 					</li>
+					<li>1.Firefox从13.0开始移除对-moz-的支持，仅支持标准的border-radius写法，在4.0-12.0区间，两种方式都支持。</li>
+					<li>Firefox支持的厂商前缀写法是非标准的-moz-border-radius-topleft，而不是-moz-border-top-left-radius。</li>
 				</ul>
 			</div>
 			<a class="panel-block m-background">
@@ -230,6 +227,6 @@
 		</div>
 		<script src="../../js/clipboard.min.js"></script>
 		<script src="../../js/common.js"></script>
-		<script src="../../js/padding-code.js"></script>
+		<script src="../../js/border-top-left-radius-code.js"></script>
 	</body>
 </html>

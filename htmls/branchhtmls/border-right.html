@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		 <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=no">
-		<title>padding</title>
+		<title>border-right</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
 		<!--<link rel="stylesheet" href="../../lib/font-awesome.css">-->
@@ -14,7 +14,7 @@
 		<div class="container">
 			<nav class="panel is-unselectable">
 			<p class="panel-heading has-text-info">
-				<strong class="has-text-info">padding</strong>
+				<strong class="has-text-info">border-right</strong>
 				<a class="button is-link m-copy">复制本页链接</a>
 			    <a class="button is-success">
 			    	<span>分享</span>
@@ -30,25 +30,31 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>padding：</strong><span>[ &lt;length&gt; | &lt;percentage&gt; ]{1,4}</span>
+						<strong>border-right：</strong><span>&lt;line-width&gt; || &lt;line-style&gt; || &lt;color&gt;</span>
+					</li>
+					<li>
+						<strong>&lt;line-width&gt;</strong><span> = &lt;length&gt; | thin | medium | thick</span>
+					</li>
+					<li>
+						<strong>&lt;line-style&gt;</strong><span> = none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset</span>
 					</li>
 					<li>
 						<strong>默认值：</strong><span class="m-border-bg">看每个独立属性</span>
 					</li>
 					<li>
-						<strong>适用于：</strong><span>所有元素，除 table-row-group | table-header-group | table-footer-group | table-column-group | table-row 外</span>
+						<strong>适用于：</strong><span>所有元素</span>
 					</li>
 					<li>
 						<strong>继承性：</strong><span>无</span>
 					</li>
 					<li>
-						<strong>动画性：</strong><span>是</span>
+						<strong>动画性：</strong><span>看每个独立属性</span>
 					</li>
 					<li>
 						<strong>计算值：</strong><span>看每个独立属性</span>
 					</li>
 					<li>
-						<strong>相关属性：</strong><span>[ padding-top ] || [ padding-right ] || [ padding-bottom ] || [ padding-left ]</span>
+						<strong>相关属性：</strong><span>[ border ] || [ border-top ] || [ border-bottom ] || [ border-left ]</span>
 					</li>
 				</ul>
 			</div>
@@ -58,10 +64,13 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>&lt;length&gt;：</strong><span>用长度值来定义内补白。不允许负值</span>
+						<strong>&lt;line-width&gt;：</strong><span>设置或检索对象边框宽度。</span>
 					</li>
 					<li>
-						<strong>&lt;percentage&gt;：</strong><span>用百分比来定义内补白。水平（默认）书写模式下，参照其包含块 width 进行计算，其它情况参照 height 。不允许负值</span>
+						<strong>&lt;line-style&gt;：</strong><span>设置或检索对象边框样式。</span>
+					</li>
+					<li>
+						<strong>&lt;color&gt;：</strong><span>设置或检索对象边框颜色。</span>
 					</li>
 				</ul>
 			</div>
@@ -71,24 +80,12 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>检索或设置对象四边的内部边距。</strong>
+						<strong>复合属性。设置对象右边边框的特性。</strong><span>参阅border属性。</span>
 					</li>
 					<li>
-						<span>如果提供全部四个参数值，将按上、右、下、左的顺序作用于四边。</span>
+						<span>如使用该复合属性定义其单个参数，则其他参数的默认值将无条件覆盖各自对应的单个属性设置。</span>
 					</li>
-					<li>
-						<span>如果只提供一个，将用于全部的四边。</span>
-					</li>
-					<li>
-						<span>如果提供两个，第一个用于上、下，第二个用于左、右。</span>
-					</li>
-					<li>
-						<span>如果提供三个，第一个用于上，第二个用于左、右，第三个用于下。</span>
-					</li>
-					<li>
-						<span>非替代(non-Replaced)行内元素可以使用该属性设置左、右两边的内补丁；若要设置上、下两边的内补丁，必须先使该对象表现为块级或内联块级。</span>
-					</li>
-					<li>对应的脚本特性为padding。</li>
+					<li>对应的脚本特性为borderRight。</li>
 				</ul>
 			</div>
 			<a class="panel-block m-background">
@@ -230,6 +227,6 @@
 		</div>
 		<script src="../../js/clipboard.min.js"></script>
 		<script src="../../js/common.js"></script>
-		<script src="../../js/padding-code.js"></script>
+		<script src="../../js/border-right-code.js"></script>
 	</body>
 </html>

@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		 <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=no">
-		<title>padding</title>
+		<title>box-shadow</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
 		<!--<link rel="stylesheet" href="../../lib/font-awesome.css">-->
@@ -14,7 +14,7 @@
 		<div class="container">
 			<nav class="panel is-unselectable">
 			<p class="panel-heading has-text-info">
-				<strong class="has-text-info">padding</strong>
+				<strong class="has-text-info">box-shadow</strong>
 				<a class="button is-link m-copy">复制本页链接</a>
 			    <a class="button is-success">
 			    	<span>分享</span>
@@ -30,25 +30,25 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>padding：</strong><span>[ &lt;length&gt; | &lt;percentage&gt; ]{1,4}</span>
+						<strong>box-shadow：</strong><span>none | &lt;shadow&gt; [ , &lt;shadow&gt; ]*</span>
 					</li>
 					<li>
-						<strong>默认值：</strong><span class="m-border-bg">看每个独立属性</span>
+						<strong>&lt;shadow&gt;</strong><span> = inset? && &lt;length&gt;{2,4} && &lt;color&gt;?</span>
 					</li>
 					<li>
-						<strong>适用于：</strong><span>所有元素，除 table-row-group | table-header-group | table-footer-group | table-column-group | table-row 外</span>
+						<strong>默认值：</strong><span class="m-border-bg">none</span>
+					</li>
+					<li>
+						<strong>适用于：</strong><span>所有元素</span>
 					</li>
 					<li>
 						<strong>继承性：</strong><span>无</span>
 					</li>
 					<li>
-						<strong>动画性：</strong><span>是</span>
+						<strong>动画性：</strong><span>是，除了内、外阴影切换时</span>
 					</li>
 					<li>
-						<strong>计算值：</strong><span>看每个独立属性</span>
-					</li>
-					<li>
-						<strong>相关属性：</strong><span>[ padding-top ] || [ padding-right ] || [ padding-bottom ] || [ padding-left ]</span>
+						<strong>计算值：</strong><span>指定值</span>
 					</li>
 				</ul>
 			</div>
@@ -58,10 +58,25 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>&lt;length&gt;：</strong><span>用长度值来定义内补白。不允许负值</span>
+						<strong>none：</strong><span>无阴影</span>
 					</li>
 					<li>
-						<strong>&lt;percentage&gt;：</strong><span>用百分比来定义内补白。水平（默认）书写模式下，参照其包含块 width 进行计算，其它情况参照 height 。不允许负值</span>
+						<strong>&lt;length&gt;①：</strong><span>第1个长度值用来设置对象的阴影水平偏移值。可以为负值。</span>
+					</li>
+					<li>
+						<strong>&lt;length&gt;②：</strong><span>第2个长度值用来设置对象的阴影垂直偏移值。可以为负值。</span>
+					</li>
+					<li>
+						<strong>&lt;length&gt;③：</strong><span>如果提供了第3个长度值则用来设置对象的阴影模糊值。不允许负值。</span>
+					</li>
+					<li>
+						<strong>&lt;length&gt;④：</strong><span>如果提供了第4个长度值则用来设置对象的阴影外延值。可以为负值。</span>
+					</li>
+					<li>
+						<strong>&lt;color&gt;：</strong><span>设置对象的阴影的颜色。</span>
+					</li>
+					<li>
+						<strong>inset：</strong><span>设置对象的阴影类型为内阴影。该值为空时，则对象的阴影类型为外阴影。</span>
 					</li>
 				</ul>
 			</div>
@@ -71,24 +86,12 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>检索或设置对象四边的内部边距。</strong>
+						<strong>设置或检索对象阴影。</strong><span>参阅 &lt;' text-shadow '&gt; 属性</span>
 					</li>
 					<li>
-						<span>如果提供全部四个参数值，将按上、右、下、左的顺序作用于四边。</span>
+						<span>可以设定多组效果，每组参数值以逗号分隔。</span>
 					</li>
-					<li>
-						<span>如果只提供一个，将用于全部的四边。</span>
-					</li>
-					<li>
-						<span>如果提供两个，第一个用于上、下，第二个用于左、右。</span>
-					</li>
-					<li>
-						<span>如果提供三个，第一个用于上，第二个用于左、右，第三个用于下。</span>
-					</li>
-					<li>
-						<span>非替代(non-Replaced)行内元素可以使用该属性设置左、右两边的内补丁；若要设置上、下两边的内补丁，必须先使该对象表现为块级或内联块级。</span>
-					</li>
-					<li>对应的脚本特性为padding。</li>
+					<li>对应的脚本特性为boxShadow。</li>
 				</ul>
 			</div>
 			<a class="panel-block m-background">
@@ -119,19 +122,33 @@
 						  </thead>
 						  <tbody>
 						     <tr>
-						     	<th>Basic Support</th>
-						     	<td class="m-green">6.0+</td>
-						     	<td class="m-green">2.0+</td>
+						     	<th rowspan="3">Basic Support</th>
+						     	<td rowspan="2" class="m-red">6.0-8.0</td>
+						     	<td class="m-red">2.0-3.0</td>
+						     	<td rowspan="2" class="m-green">4.0-43.0<sup>-webkit-</sup></td>
+						     	<td rowspan="2" class="m-green">3.1-8.1<sup>-webkit-</sup></td>
+						     	<td rowspan="2" class="m-green">10.5-28.0<sup>-webkit-</sup></td>
+						     	<td rowspan="2" class="m-green">3.2-8.1<sup>-webkit-</sup></td>
+						     	<td rowspan="2" class="m-green">2.1-4.4.4<sup>-webkit-</sup></td>
+						     	<td rowspan="2" class="m-green">18.0-40.0<sup>-webkit-</sup></td>
+						     </tr>
+						     <tr>
+						     	<td class="m-pink">4.0-12.0#1<sup>-moz-</sup></td>
+						     </tr>
+						     <tr>
+						     	<td class="m-green">9.0+</td>
 						     	<td class="m-green">4.0+</td>
-						     	<td class="m-green">3.1+</td>
-						     	<td class="m-green">3.5+</td>
-						     	<td class="m-green">3.2+</td>
-						     	<td class="m-green">2.1+</td>
+						     	<td class="m-green">5.0+</td>
+						     	<td class="m-green">5.0+</td>
+						     	<td class="m-green">10.5+</td>
+						     	<td class="m-green">4.0+</td>
+						     	<td class="m-green">2.2+</td>
 						     	<td class="m-green">18.0+</td>
 						     </tr>
 						  </tbody>
 						</table>
 					</li>
+					<li>1.Firefox从13.0开始移除对-moz-的支持，仅支持标准的 &lt;' box-shadow '&gt; 写法，在4.0-12.0区间，两种方式都支持。</li>
 				</ul>
 			</div>
 			<a class="panel-block m-background">
@@ -230,6 +247,6 @@
 		</div>
 		<script src="../../js/clipboard.min.js"></script>
 		<script src="../../js/common.js"></script>
-		<script src="../../js/padding-code.js"></script>
+		<script src="../../js/box-shadow-code.js"></script>
 	</body>
 </html>

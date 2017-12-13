@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		 <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=no">
-		<title>padding</title>
+		<title>border-left-style</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
 		<!--<link rel="stylesheet" href="../../lib/font-awesome.css">-->
@@ -14,7 +14,7 @@
 		<div class="container">
 			<nav class="panel is-unselectable">
 			<p class="panel-heading has-text-info">
-				<strong class="has-text-info">padding</strong>
+				<strong class="has-text-info">border-left-style</strong>
 				<a class="button is-link m-copy">复制本页链接</a>
 			    <a class="button is-success">
 			    	<span>分享</span>
@@ -30,25 +30,28 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>padding：</strong><span>[ &lt;length&gt; | &lt;percentage&gt; ]{1,4}</span>
+						<strong>border-left-style：</strong><span>&lt;line-style&gt;</span>
 					</li>
 					<li>
-						<strong>默认值：</strong><span class="m-border-bg">看每个独立属性</span>
+						<strong>&lt;line-style&gt;</strong><span> = none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset</span>
 					</li>
 					<li>
-						<strong>适用于：</strong><span>所有元素，除 table-row-group | table-header-group | table-footer-group | table-column-group | table-row 外</span>
+						<strong>默认值：</strong><span class="m-border-bg">none</span>
+					</li>
+					<li>
+						<strong>适用于：</strong><span>所有元素</span>
 					</li>
 					<li>
 						<strong>继承性：</strong><span>无</span>
 					</li>
 					<li>
-						<strong>动画性：</strong><span>是</span>
+						<strong>动画性：</strong><span>否</span>
 					</li>
 					<li>
-						<strong>计算值：</strong><span>看每个独立属性</span>
+						<strong>计算值：</strong><span>指定值</span>
 					</li>
 					<li>
-						<strong>相关属性：</strong><span>[ padding-top ] || [ padding-right ] || [ padding-bottom ] || [ padding-left ]</span>
+						<strong>相关属性：</strong><span>[ border-style ] || [ border-top-style ] || [ border-right-style ] || [ border-bottom-style ]</span>
 					</li>
 				</ul>
 			</div>
@@ -58,10 +61,33 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>&lt;length&gt;：</strong><span>用长度值来定义内补白。不允许负值</span>
+						<strong>none：</strong><span>无轮廓。border-color将被忽略，border-width计算值为0，除非边框轮廓为图像，即border-image。</span>
 					</li>
 					<li>
-						<strong>&lt;percentage&gt;：</strong><span>用百分比来定义内补白。水平（默认）书写模式下，参照其包含块 width 进行计算，其它情况参照 height 。不允许负值</span>
+						<strong>hidden：</strong><span>隐藏边框。IE7及以下尚不支持</span>
+					</li>
+					<li>
+						<strong>dotted：</strong><span>点状轮廓。IE6下显示为dashed效果</span>
+					<li>
+						<strong>dashed：</strong><span>虚线轮廓。</span>
+					</li>
+					<li>
+						<strong>solid：</strong><span>实线轮廓。</span>
+					</li>
+					<li>
+						<strong>double：</strong><span>双线轮廓。两条单线与其间隔的和等于指定的border-width值。</span>
+					</li>
+					<li>
+						<strong>groove：</strong><span>3D凹槽轮廓。</span>
+					</li>
+					<li>
+						<strong>ridge：</strong><span>3D凸槽轮廓。</span>
+					</li>
+					<li>
+						<strong>inset：</strong><span>3D凹边轮廓。</span>
+					</li>
+					<li>
+						<strong>outset：</strong><span>3D凸边轮廓。</span>
 					</li>
 				</ul>
 			</div>
@@ -71,24 +97,12 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>检索或设置对象四边的内部边距。</strong>
+						<strong>设置或检索对象的左边边框样式。</strong><span></span>
 					</li>
 					<li>
-						<span>如果提供全部四个参数值，将按上、右、下、左的顺序作用于四边。</span>
+						<span>如果border-width等于0，本属性将失去作用。</span>
 					</li>
-					<li>
-						<span>如果只提供一个，将用于全部的四边。</span>
-					</li>
-					<li>
-						<span>如果提供两个，第一个用于上、下，第二个用于左、右。</span>
-					</li>
-					<li>
-						<span>如果提供三个，第一个用于上，第二个用于左、右，第三个用于下。</span>
-					</li>
-					<li>
-						<span>非替代(non-Replaced)行内元素可以使用该属性设置左、右两边的内补丁；若要设置上、下两边的内补丁，必须先使该对象表现为块级或内联块级。</span>
-					</li>
-					<li>对应的脚本特性为padding。</li>
+					<li>对应的脚本特性为borderLeftStyle。</li>
 				</ul>
 			</div>
 			<a class="panel-block m-background">
@@ -121,17 +135,32 @@
 						     <tr>
 						     	<th>Basic Support</th>
 						     	<td class="m-green">6.0+</td>
-						     	<td class="m-green">2.0+</td>
-						     	<td class="m-green">4.0+</td>
-						     	<td class="m-green">3.1+</td>
-						     	<td class="m-green">3.5+</td>
-						     	<td class="m-green">3.2+</td>
-						     	<td class="m-green">2.1+</td>
-						     	<td class="m-green">18.0+</td>
+						     	<td rowspan="5" class="m-green">2.0+</td>
+						     	<td rowspan="5" class="m-green">4.0+</td>
+						     	<td rowspan="5" class="m-green">3.1+</td>
+						     	<td rowspan="5" class="m-green">3.5+</td>
+						     	<td rowspan="5" class="m-green">3.2+</td>
+						     	<td rowspan="5" class="m-green">2.1+</td>
+						     	<td rowspan="5" class="m-green">18.0+</td>
+						     </tr>
+						     <tr>
+						     	<th rowspan="2">hidden</th>
+						     	<td class="m-red">6.0-7.0</td>
+						     </tr>
+						     <tr>
+						     	<td class="m-green">8.0+</td>
+						     </tr>
+						     <tr>
+						     	<th rowspan="2">dotted</th>
+						     	<td class="m-pink">6.0#1</td>
+						     </tr>
+						     <tr>
+						     	<td class="m-green">7.0+</td>
 						     </tr>
 						  </tbody>
 						</table>
 					</li>
+					<li>1.dotted属性值显示为dashed的效果。</li>
 				</ul>
 			</div>
 			<a class="panel-block m-background">
@@ -230,6 +259,6 @@
 		</div>
 		<script src="../../js/clipboard.min.js"></script>
 		<script src="../../js/common.js"></script>
-		<script src="../../js/padding-code.js"></script>
+		<script src="../../js/border-left-style-code.js"></script>
 	</body>
 </html>
