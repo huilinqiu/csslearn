@@ -83,3 +83,17 @@
 			window.open('http://widget.renren.com/dialog/share?resourceUrl=' + shareurl + '&title=' + sharetitle + '&description=' + '' + '&pic=' + pic + '&charset=utf-8', '_blank')
 		});
   	}
+
+	// textarea元素中放入代码，并点击后在新窗口中运行。注意手机这块应需要重新调整。。。
+	var textarea = document.querySelector('.panel-block.m-new-textarea textarea');
+	var textcode = textarea.innerHTML.replace(/&gt;/g,">").replace(/&lt;/g,"<");
+	var runhtml = document.querySelector('.panel a.m-run-html');
+	var copycode = document.querySelector('.panel a.m-copy-code');
+	copycode.addEventListener('click',function(){
+		clipboard.copy(textcode);
+	});
+	runhtml.addEventListener('click',function(){
+		var newwindow = window.open('','_blank','height=400,width=600,top=0,left=0');
+		newwindow.document.write(textcode);
+		newwindow.focus();
+	});

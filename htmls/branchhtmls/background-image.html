@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		 <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=no">
+		<title>background-image</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+		<!--<link rel="stylesheet" href="../../lib/font-awesome.css">-->
+		<!--<link rel="stylesheet" href="../../lib/css/bulma.css">-->
+		<link rel="stylesheet" href="../../css/style.css">
+	</head>
+	<body>
+		<div class="container">
+			<nav class="panel is-unselectable">
+			<p class="panel-heading has-text-info">
+				<strong class="has-text-info">background-image</strong>
+				<a class="button is-link m-copy">复制本页链接</a>
+			    <a class="button is-success">
+			    	<span>分享</span>
+			    	<span class="icon">
+			    		<i class="fa fa-caret-up"></i>
+			    	</span>
+			    </a>
+				<a class="button is-pulled-right" href="javascript:history.go(-1)">上页</a>
+			</p>
+			<a class="panel-block m-background">
+				 <span>语法：</span>  
+			</a>
+			<div class="panel-block control">
+				<ul>
+					<li>
+						<strong>background-image：</strong><span>&lt;bg-image&gt; [ , &lt;bg-image&gt; ]*<sup class="m-css3-super">css3</sup></span>
+					</li>
+					<li>
+						<strong>默认值：</strong><span class="m-border-bg">transparent</span>
+					</li>
+					<li>
+						<strong>适用于：</strong><span>所有元素</span>
+					</li>
+					<li>
+						<strong>继承性：</strong><span>无</span>
+					</li>
+					<li>
+						<strong>动画性：</strong><span>是</span>
+					</li>
+					<li>
+						<strong>计算值：</strong><span>指定值</span>
+					</li>
+				</ul>
+			</div>
+			<a class="panel-block m-background">
+				 <span>取值：</span>  
+			</a>
+			<div class="panel-block control">
+				<ul>
+					<li>
+						<strong>&lt;color&gt;:</strong><span>指定颜色。</span>
+					</li>
+				</ul>
+			</div>
+			<a class="panel-block m-background">
+				 <span>说明：</span>  
+			</a>
+			<div class="panel-block control">
+				<ul>
+					<li>
+						<strong>设置或检索对象的背景颜色。</strong>
+					</li>
+					<li>当同时定义了背景颜色和背景图像时，背景图像覆盖在背景颜色之上。</li>
+					<li>如果设置了 &lt;' background-image '&gt;，同时也建议设置&lt;' background-color '&gt; 用于当背景图像不可见时保持与文本颜色有一定的对比度。</li>
+					<li>对应的脚本特性为backgroundColor。</li>
+				</ul>
+			</div>
+			<a class="panel-block m-background">
+				 <span>兼容性：</span>  
+			</a>
+			<div class="panel-block control">
+				<ul>
+					<li>
+						<div class="m-block m-green"></div><span>= 支持</span>
+						<div class="m-block m-red"></div><span>= 不支持</span>
+						<div class="m-block m-pink"></div><span>= 部分支持</span>
+					</li>
+					<li class="m-space"></li>
+					<li>
+						<table class="table is-bordered">
+						  <thead>
+						    <tr>
+						      <th class="m-blue"><abbr title="values">Values</abbr></th>
+						      <th class="m-blue">IE</th>
+						      <th class="m-blue">Firefox</th>
+						      <th class="m-blue">Chrome</th>
+						      <th class="m-blue">Safari</th>
+						      <th class="m-blue">Opera</th>
+						      <th class="m-blue">IOS Safari</th>
+						      <th class="m-blue">Android Browser</th>
+						      <th class="m-blue">Android Chrome</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						     <tr>
+						     	<th>Basic Support</th>
+						     	<td rowspan="2"  class="m-green">6.0+</td>
+						     	<td rowspan="4" class="m-green">2.0+</td>
+						     	<td rowspan="4" class="m-green">4.0+</td>
+						     	<td rowspan="4" class="m-green">3.1+</td>
+						     	<td rowspan="4" class="m-green">3.5+</td>
+						     	<td rowspan="4" class="m-green">3.2+</td>
+						     	<td rowspan="4" class="m-green">2.1+</td>
+						     	<td rowspan="4" class="m-green">18.0+</td>
+						     </tr>
+						     <tr>
+						     	<th>transparent</th>
+						     </tr>
+						     <tr>
+						     	<th rowspan="2">RGBA,HSL,HSLA</th>
+						     	<td class="m-red">6.0-8.0</td>
+						     </tr>
+						     <tr>
+						     	<td class="m-green">9.0+</td>
+						     </tr>
+						  </tbody>
+						</table>
+					</li>
+				</ul>
+			</div>
+			<a class="panel-block m-background">
+				 <span>示例：</span>  
+			</a>
+			<div class="panel-block control m-new-textarea">
+				<textarea class="textarea" placeholder="textarea" rows="20">
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+<meta charset="utf-8" />
+<title>background-color_CSS参考手册_web前端开发参考手册系列</title>
+<meta name="author" content="制作者：CarryQiu,联系：187346709@qq.com" />
+<style>
+.test {
+	padding: 10px;
+	border: 1px solid #000;
+	background-color: #808080;
+}
+</style>
+</head>
+<body>
+<div class="test">灰色背景</div>
+</body>
+</html>
+				</textarea>
+			</div>
+			<a href="#" class="button is-link m-run-html">运行</a>
+			<a href="#" class="button is-success is-pulled-right m-copy-code">复制</a>
+			
+			<p class="">
+			     <div class="m-dropdown-menu" id="dropdown-menu" role="menu">
+					    <div class="dropdown-content">
+					      <a href="#" class="dropdown-item">
+					      	 <span class="icon">
+					      	 	<i class="fa fa-weibo"></i>
+					      	 </span>
+					       	 <span>新浪微博</span>
+					      </a>
+					      <a class="dropdown-item">
+			                <span class="icon">
+					      	 	<i class="fa fa-weixin"></i>
+					      	 </span>
+					       	 <span>微信</span>
+					      </a>
+					      <a href="#" class="dropdown-item">
+					        <span class="icon">
+					      	 	<i class="fa fa-qq"></i>
+					      	 </span>
+					       	 <span>QQ空间</span>
+					      </a>
+					      <a href="#" class="dropdown-item">
+					         <span class="icon">
+					      	 	<i class="fa fa-renren"></i>
+					      	 </span>
+					       	 <span>人人网</span>
+					      </a>
+					      <a href="#" class="dropdown-item">
+			                 <span class="icon">
+					      	 	<i class="fa fa-delicious"></i>
+					      	 </span>
+					       	 <span>豆瓣</span>
+					      </a>
+					    </div>
+					</div>
+			  </p>
+		</nav>
+		 <div class="box">
+		  <article class="media">
+		    <div class="media-left">
+		      <figure class="image is-64x64">
+		        <img src="../../img/qhl.png" alt="Image">
+		      </figure>
+		    </div>
+		    <div class="media-content">
+		      <div class="content">
+		        <p>
+		          <strong>Carry Qiu</strong> <small>187346709@qq.com</small> <small></small>
+		          <span>-----欢迎提交问题到微博上：</span>
+		           <a href="https://weibo.com/1838110001" target="_blank">@随心随缘有什么问题</a>
+		          <iframe width="163" height="24" src="https://widget.weibo.com/relationship/followbutton.php?language=zh_cn&width=63&height=24&uid=1838110001&style=2btn=red&dpc=1"></iframe>
+		          <br>
+		       
+		        </p>
+		      </div>
+		      <nav class="level is-mobile">
+		        <div class="level-left">
+		          <a class="level-item">
+		            <span class="icon is-small"><i class="fa fa-reply"></i></span>
+		          </a>
+		          <a class="level-item">
+		            <span class="icon is-small"><i class="fa fa-retweet"></i></span>
+		          </a>
+		          <a class="level-item">
+		            <span class="icon is-small"><i class="fa fa-heart"></i></span>
+		          </a>
+		        </div>
+		      </nav>
+		    </div>
+		  </article>
+		</div>
+		<div class="m-back">
+			<a class="button is-link m-back-start">
+				回上<br/>
+				一级
+			</a>
+			<a href="../properties.html" class="button is-link is-hidden m-back-end">
+				欢迎<br/>
+				光临
+			</a>
+		</div>
+		<div class="toTop">
+			<button class="button is-primary is-large">
+				<i class="fa fa-2x fa-arrow-circle-o-up"></i>
+			</button>
+		</div>
+
+		</div>
+		<script src="../../js/clipboard.min.js"></script>
+		<script src="../../js/common.js"></script>
+		
+	</body>
+</html>
