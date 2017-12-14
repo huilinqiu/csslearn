@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		 <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=no">
-		<title>background-image</title>
+		<title>background-repeat</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
 		<!--<link rel="stylesheet" href="../../lib/font-awesome.css">-->
@@ -14,7 +14,7 @@
 		<div class="container">
 			<nav class="panel is-unselectable">
 			<p class="panel-heading has-text-info">
-				<strong class="has-text-info">background-image</strong>
+				<strong class="has-text-info">background-repeat</strong>
 				<a class="button is-link m-copy">复制本页链接</a>
 			    <a class="button is-success">
 			    	<span>分享</span>
@@ -30,13 +30,13 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>background-image：</strong><span>&lt;bg-image&gt; [ , &lt;bg-image&gt; ]*<sup class="m-css3-super">css3</sup></span>
+						<strong>background-repeat：</strong><span>&lt;repeat-style&gt; [ , &lt;repeat-style&gt; ]*<sup class="m-css3-super">css3</sup></span>
 					</li>
 					<li>
-						<strong>&lt;bg-image&gt;</strong><span> = &lt;image&gt; | none</span>
+						<strong>&lt;repeat-style&gt;</strong><span> = repeat-x | repeat-y | [repeat | no-repeat | space <sup class="m-css3-super">css3</sup>| round <sup class="m-css3-super">css3</sup>]{1,2}</span>
 					</li>
 					<li>
-						<strong>默认值：</strong><span class="m-border-bg">none</span>
+						<strong>默认值：</strong><span class="m-border-bg">repeat</span>
 					</li>
 					<li>
 						<strong>适用于：</strong><span>所有元素</span>
@@ -58,10 +58,22 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>none:</strong><span>无背景图。</span>
+						<strong>repeat-x:</strong><span>背景图像在横向上平铺。</span>
 					</li>
 					<li>
-						<strong>&lt;image&gt;:</strong><span>使用绝对或相对地址指或者创建渐变色来确定图像。</span>
+						<strong>repeat-y:</strong><span>背景图像在纵向上平铺。</span>
+					</li>
+					<li>
+						<strong>repeat:</strong><span>背景图像在横向和纵向平铺。</span>
+					</li>
+					<li>
+						<strong>no-repeat:</strong><span>背景图像不平铺。</span>
+					</li>
+					<li>
+						<strong>round:</strong><span>背景图像自动缩放直到适应且填充满整个容器。（CSS3）。</span>
+					</li>
+					<li>
+						<strong>space:</strong><span>背景图像以相同的间距平铺且填充满整个容器或某个方向。（CSS3）。</span>
 					</li>
 				</ul>
 			</div>
@@ -71,11 +83,11 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>设置或检索对象的背景图像。</strong>
+						<strong>设置或检索对象的背景图像如何铺排填充。必须先指定 &lt;' background-image '&gt; 属性。</strong>
 					</li>
-					<li>如果定义了多组背景图，且背景图之间有重叠，写在前面的将会盖在写在后面的图像之上。</li>
-					<li>如果设置了 &lt;' background-image '&gt;，同时也建议设置&lt;' background-color '&gt; 用于当背景图像不可见时保持与文本颜色有一定的对比度。</li>
-					<li>对应的脚本特性为backgroundImage。</li>
+					<li>允许提供2个参数，如果提供全部2个参数，第1个用于横向，第二个用于纵向。</li>
+					<li>如果只提供1个参数，则用于横向和纵向。特殊值repeat-x和repeat-y除外，因为repeat-x相当于repeat no-repeat，repeat-y相当于no-repeat repeat，即其实repeat-x和repeat-y等价于提供了2个参数值</li>
+					<li>对应的脚本特性为backgroundRepeat。</li>
 				</ul>
 			</div>
 			<a class="panel-block m-background">
@@ -108,17 +120,27 @@
 						     <tr>
 						     	<th>Basic Support</th>
 						     	<td class="m-green">6.0+</td>
-						     	<td rowspan="3" class="m-green">2.0+</td>
-						     	<td rowspan="3" class="m-green">4.0+</td>
-						     	<td rowspan="3" class="m-green">3.1+</td>
-						     	<td rowspan="3" class="m-green">3.5+</td>
-						     	<td rowspan="3" class="m-green">3.2+</td>
-						     	<td rowspan="3" class="m-green">2.1+</td>
-						     	<td rowspan="3" class="m-green">18.0+</td>
+						     	<td class="m-green">2.0+</td>
+						     	<td rowspan="5" class="m-green">4.0+</td>
+						     	<td rowspan="5" class="m-green">3.1+</td>
+						     	<td rowspan="5" class="m-green">15.0+</td>
+						     	<td rowspan="5" class="m-green">3.2+</td>
+						     	<td rowspan="5" class="m-green">2.1+</td>
+						     	<td rowspan="5" class="m-green">18.0+</td>
 						     </tr>
 						     <tr>
-						     	<th rowspan="2">Multiple image多组图像</th>
+						     	<th rowspan="2">2个参数值</th>
 						     	<td class="m-red">6.0-8.0</td>
+						     	<td class="m-red">2.0-12.0</td>
+						     </tr>
+						     <tr>
+						     	<td class="m-green">9.0+</td>
+						     	<td class="m-green">13.0+</td>
+						     </tr>
+						     <tr>
+						     	<th rowspan="2">space | round</th>
+						     	<td class="m-red">6.0-8.0</td>
+						     	<td rowspan="2" class="m-red">2.0-38.0</td>
 						     </tr>
 						     <tr>
 						     	<td class="m-green">9.0+</td>
@@ -140,45 +162,15 @@
 <title>background-color_CSS参考手册_web前端开发参考手册系列</title>
 <meta name="author" content="制作者：CarryQiu,联系：187346709@qq.com" />
 <style>
-.test strong {
-	font-size: 16px;
-}
-.test .url p {
-	padding-top: 200px;
-	background-image: url(skin/p_103x196_1.jpg);
-	background-repeat: no-repeat;
-}
-.test .gradient p {
-	height: 100px;
-	background-image: linear-gradient(to top, #45B5DA, #0382AD);
-}
-.test .multiple p {
-	padding-top: 200px;
-	background-image: url(skin/p_103x196_1.jpg),
-					  url(skin/p_103x196_2.jpg),
-					  url(skin/p_103x196_3.jpg);
-	background-repeat: no-repeat;
-	background-position: 0 0,
-						 100px 0,
-						 200px 0;
-}
+	.test {
+		padding-top: 200px;
+		background-image: url(skin/p_103x196_1.jpg);
+		background-repeat: repeat-x;
+	}
 </style>
 </head>
 <body>
-	<ul class="test">
-		<li class="url">
-			<strong>使用url()引入背景图像</strong>
-			<p>使用url()可以是绝对或相对路径</p>
-		</li>
-		<li class="gradient">
-			<strong>使用渐变绘制背景图像</strong>
-			<p>渐变种类有: linear-gradient, radial-gradient, repeating-linear-gradient, repeating-radial-gradient</p>
-		</li>
-		<li class="multiple">
-			<strong>多重背景图</strong>
-			<p>多重背景图可以是url()或gradient的混合方式</p>
-		</li>
-	</ul>
+	<div class="test">横向平铺背景图片</div>
 </body>
 </html>
 				</textarea>

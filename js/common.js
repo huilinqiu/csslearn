@@ -86,14 +86,24 @@
 
 	// textarea元素中放入代码，并点击后在新窗口中运行。注意手机这块应需要重新调整。。。
 	var textarea = document.querySelector('.panel-block.m-new-textarea textarea');
-	var textcode = textarea.innerHTML.replace(/&gt;/g,">").replace(/&lt;/g,"<");
-	var runhtml = document.querySelector('.panel a.m-run-html');
-	var copycode = document.querySelector('.panel a.m-copy-code');
-	copycode.addEventListener('click',function(){
-		clipboard.copy(textcode);
-	});
-	runhtml.addEventListener('click',function(){
-		var newwindow = window.open('','_blank','height=400,width=600,top=0,left=0');
-		newwindow.document.write(textcode);
-		newwindow.focus();
-	});
+	if(textarea){
+		var textcode = textarea.innerHTML.replace(/&gt;/g,">").replace(/&lt;/g,"<");
+		var runhtml = document.querySelector('.panel a.m-run-html');
+		var copycode = document.querySelector('.panel a.m-copy-code');
+		copycode.addEventListener('click',function(){
+			clipboard.copy(textcode);
+		});
+		runhtml.addEventListener('click',function(){
+			var newwindow = window.open('','_blank','height=400,width=600,top=0,left=0');
+			newwindow.document.write(textcode);
+			newwindow.focus();
+		});
+	}
+	
+	// nav-level 部分页面下关闭
+	var navLevel = document.querySelector('nav.level.is-mobile');
+	if(navLevel){
+		navLevel.classList.remove('is-mobile');
+		navLevel.classList.add('is-hidden-touch');
+		navLevel.classList.add('is-hidden-desktop-only');
+	}

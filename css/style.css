@@ -65,7 +65,7 @@ body {
 }
 .m-dropdown-menu {
 	display: none;
-    left: 47em;
+	left: 56%;
  	top: 7px;
     min-width: 12rem;
     padding-top: 4px;
@@ -147,9 +147,29 @@ body {
 	border: 1px solid lightblue;
 	background: #fff0f0;
 }
-.container .panel-heading a:nth-child(2) {
-	position: absolute;
-	left: 60%;
+@media (max-width: 767px) {
+	.container .panel-heading a:nth-child(2) {
+		position: absolute;
+		left: 65%;
+	}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+	.container .panel-heading a:nth-child(2) {
+		position: absolute;
+		left: 62%;
+	}
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+	.container .panel-heading a:nth-child(2) {
+		position: absolute;
+		left: 60%;
+	}
+}
+@media (min-width: 1200px) {
+	.container .panel-heading a:nth-child(2) {
+		position: absolute;
+		left: 60%;
+	}
 }
 .container .panel-heading a:nth-child(3) {
 	position: absolute;
