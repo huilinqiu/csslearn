@@ -50,12 +50,36 @@
   	var back = document.querySelector('.m-back');
   	var backup = document.querySelector('.m-back a.m-back-start');
   	var backhello = document.querySelector('.m-back a.m-back-end');
-  	back.addEventListener('mouseenter',function(){
-  		backup.classList.add('is-hidden');
-  		backhello.classList.remove('is-hidden');
-  	});
-  	back.addEventListener('mouseleave',function(){
-  		backup.classList.remove('is-hidden');
-  		backhello.classList.add('is-hidden');
-  	});
-
+  	if(back){
+  		back.addEventListener('mouseenter',function(){
+  			backup.classList.add('is-hidden');
+  			backhello.classList.remove('is-hidden');
+	  	});
+	  	back.addEventListener('mouseleave',function(){
+	  		backup.classList.remove('is-hidden');
+	  		backhello.classList.add('is-hidden');
+	  	});
+  	}
+  	
+  	// share 分享
+  	// 获取url=当前网址+分享网页，分享内容title=分享的主标题,分享pic,以及其他。
+  	var shareurl = location.href;
+	var sharetitle = 'css参考手册--您事业的好帮手-----' + document.title;
+	//	var pic = 'http://127.0.0.1:8020/csslearn/img/qhl.png';
+	var pic = 'https://huilinqiu.github.io/csslearn/img/qhl.png';
+  	var shares = document.querySelectorAll('.m-dropdown-menu a.dropdown-item');
+  	if(shares[0]){
+		shares[0].addEventListener('click',function(){
+			window.open('http://v.t.sina.com.cn/share/share.php?title=' + sharetitle + '&url=' + shareurl +'&pic=' +pic, '_blank');
+		});
+  	}
+  	if(shares[2]){
+		shares[2].addEventListener('click',function(){
+			 window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?site=www.tuan2.com&title=' + '' + '&desc=' + sharetitle + '&summary=' + '' + '&url=' + shareurl + '&pics=' + pic, '_blank');
+		});
+  	}
+  	if(shares[3]){
+		shares[3].addEventListener('click',function(){
+			window.open('http://widget.renren.com/dialog/share?resourceUrl=' + shareurl + '&title=' + sharetitle + '&description=' + '' + '&pic=' + pic + '&charset=utf-8', '_blank')
+		});
+  	}

@@ -3090,64 +3090,68 @@
 		<script src="../js/clipboard.min.js"></script>
 		<script src="../js/common.js"></script>
 		<script>
-     		// menu expansion from click plus
-			function findBlock(block,str){
-				if(block.dataset.target == str && block.dataset.target !== 'csslist') {
-					var addclick = block.querySelector('.fa-plus-square-o');
-					addclick.addEventListener('click',function(event){
-						var that = this;
-						var hidemenu = block.querySelector('.m-hide-menu.control');
-						if(hidemenu.classList.contains('is-hidden')){
-							open(hidemenu,that);
-							block.classList.add('is-active');
-						}else{
-							close(hidemenu,that);
-							block.classList.remove('is-active');
-						}
-					});
+			(function(window){
+				// menu expansion from click plus
+				function findBlock(block,str){
+					if(block.dataset.target == str && block.dataset.target !== 'csslist') {
+						var addclick = block.querySelector('.fa-plus-square-o');
+						addclick.addEventListener('click',function(event){
+							var that = this;
+							var hidemenu = block.querySelector('.m-hide-menu.control');
+							if(hidemenu.classList.contains('is-hidden')){
+								open(hidemenu,that);
+								block.classList.add('is-active');
+							}else{
+								close(hidemenu,that);
+								block.classList.remove('is-active');
+							}
+						});
+					}
 				}
-			}
-			function close(ele,that){
-				ele.classList.remove('is-block');
-				ele.classList.add('is-hidden');
-				that.classList.remove('fa-minus-square-o');
-				that.classList.add('fa-plus-square-o');
-			}
-			function open(ele,that){
-				ele.classList.remove('is-hidden');
-				ele.classList.add('is-block');
-				that.classList.remove('fa-plus-square-o');
-				that.classList.add('fa-minus-square-o');
-			}
-			var allBlock = document.querySelectorAll('a.panel-block.is-wrapped');
-			var str = ['properties','selectors','rules','values','appendix','hack','questions','webkit','introduction','csslist'];
-			var strbranch = [['positioning','layout','dimension','margin','padding','border','background','color','font','text','textDecoration',
-			'writingModes','list','table','content','userInterface','multiColumn','flexibleBox-old','flexibleBox-new','transform','transition',
-			'animation','printing','mediaQueries','onlyIE','onlyFirefox','onlyWebkit'],['elementSelector','relationSelector','propertySelector',
-			'pseudoClass','pseudoObject'],[],['length','angle','time','frequency','layoutSpecific','resolution','color','textual','functional',
-			'content','image','numeric'],[],[],[],['vision','text','action'],[]];
-			for(var i=0;i<allBlock.length;i++){
-				for(var j=0;j<str.length;j++){
-					findBlock(allBlock[i],str[j]);
+				function close(ele,that){
+					ele.classList.remove('is-block');
+					ele.classList.add('is-hidden');
+					that.classList.remove('fa-minus-square-o');
+					that.classList.add('fa-plus-square-o');
 				}
-				var childBlocks = allBlock[i].querySelectorAll('div.m-hide-menu.control li.panel-block.is-wrapped');
-				if(childBlocks.length>0){
-					for(var m=0;m<childBlocks.length;m++){
-						for(var n=0;n<strbranch[i].length;n++){
-							findBlock(childBlocks[m],strbranch[i][n]);
+				function open(ele,that){
+					if(ele && that){
+						ele.classList.remove('is-hidden');
+						ele.classList.add('is-block');
+						that.classList.remove('fa-plus-square-o');
+						that.classList.add('fa-minus-square-o');
+					}
+				}
+				var allBlock = document.querySelectorAll('a.panel-block.is-wrapped');
+				var str = ['properties','selectors','rules','values','appendix','hack','questions','webkit','introduction','csslist'];
+				var strbranch = [['positioning','layout','dimension','margin','padding','border','background','color','font','text','textDecoration',
+				'writingModes','list','table','content','userInterface','multiColumn','flexibleBox-old','flexibleBox-new','transform','transition',
+				'animation','printing','mediaQueries','onlyIE','onlyFirefox','onlyWebkit'],['elementSelector','relationSelector','propertySelector',
+				'pseudoClass','pseudoObject'],[],['length','angle','time','frequency','layoutSpecific','resolution','color','textual','functional',
+				'content','image','numeric'],[],[],[],['vision','text','action'],[]];
+				for(var i=0;i<allBlock.length;i++){
+					for(var j=0;j<str.length;j++){
+						findBlock(allBlock[i],str[j]);
+					}
+					var childBlocks = allBlock[i].querySelectorAll('div.m-hide-menu.control li.panel-block.is-wrapped');
+					if(childBlocks.length>0){
+						for(var m=0;m<childBlocks.length;m++){
+							for(var n=0;n<strbranch[i].length;n++){
+								findBlock(childBlocks[m],strbranch[i][n]);
+							}
 						}
 					}
 				}
-			}
-			
-			// span标签点击转向网页
-			var span = document.querySelectorAll('.m-hide-menu.control .m-hide-menu.control li span:last-child');
-				for(var i=0;i<span.length;i++){
-					span[i].addEventListener('click',function(){
-					var text = this.innerText;
-					location.href = './branchhtmls/'+text+'.html';
-				});
-			}
+				
+				// span标签点击转向网页
+				var span = document.querySelectorAll('.m-hide-menu.control .m-hide-menu.control li span:last-child');
+					for(var i=0;i<span.length;i++){
+						span[i].addEventListener('click',function(){
+						var text = this.innerText;
+						location.href = './branchhtmls/'+text+'.html';
+					});
+				}				
+			})(window)
 		</script>
 	</body>
 </html>

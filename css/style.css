@@ -65,7 +65,7 @@ body {
 }
 .m-dropdown-menu {
 	display: none;
-    left: 47em;
+    left: 42em;
  	top: 7px;
     min-width: 12rem;
     padding-top: 4px;
@@ -149,11 +149,11 @@ body {
 }
 .container .panel-heading a:nth-child(2) {
 	position: absolute;
-	left: 85%;
+	left: 50%;
 }
 .container .panel-heading a:nth-child(3) {
 	position: absolute;
-	left: 50%;	
+	left: 44%;	
 }
 .table td,.table th{
    vertical-align: middle;
