@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		 <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=no">
-		<title>background-origin</title>
+		<title>font-stretch</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
 		<!--<link rel="stylesheet" href="../../lib/font-awesome.css">-->
@@ -14,7 +14,7 @@
 		<div class="container">
 			<nav class="panel is-unselectable">
 			<p class="panel-heading has-text-info">
-				<strong class="has-text-info">background-origin</strong>
+				<strong class="has-text-info">font-stretch</strong>
 				<a class="button is-link m-copy">复制本页链接</a>
 			    <a class="button is-success">
 			    	<span>分享</span>
@@ -30,22 +30,19 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>background-origin：</strong><span>&lt;box&gt; [ , &lt;box&gt; ]*</span>
+						<strong>font-stretch：</strong><span>normal | ultra-condensed | extra-condensed | condensed | semi-condensed | semi-expanded | expanded | extra-expanded | ultra-expanded</span>
 					</li>
 					<li>
-						<strong>&lt;box&gt;</strong><span> = border-box | padding-box | content-box</span>
-					</li>
-					<li>
-						<strong>默认值：</strong><span class="m-border-bg">padding-box</span>
+						<strong>默认值：</strong><span class="m-border-bg">normal</span>
 					</li>
 					<li>
 						<strong>适用于：</strong><span>所有元素</span>
 					</li>
 					<li>
-						<strong>继承性：</strong><span>无</span>
+						<strong>继承性：</strong><span>有</span>
 					</li>
 					<li>
-						<strong>动画性：</strong><span>否</span>
+						<strong>动画性：</strong><span>是</span>
 					</li>
 					<li>
 						<strong>计算值：</strong><span>指定值</span>
@@ -58,13 +55,31 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>padding-box:</strong><span>从padding区域（含padding）开始显示背景图像。</span>
+						<strong>normal:</strong><span>正常文字宽度。</span>
 					</li>
 					<li>
-						<strong>border-box:</strong><span>从border区域（含border）开始显示背景图像。</span>
+						<strong>ultra-condensed：</strong><span>比正常文字宽度窄4个基数。</span>
 					</li>
 					<li>
-						<strong>content-box:</strong><span>从content区域开始显示背景图像。</span>
+						<strong>extra-condensed：</strong><span>比正常文字宽度窄3个基数。</span>
+					</li>
+					<li>
+						<strong>condensed：</strong><span>比正常文字宽度窄2个基数。</span>
+					</li>
+					<li>
+						<strong>semi-condensed：</strong><span>比正常文字宽度窄1个基数。</span>
+					</li>
+					<li>
+						<strong>semi-expanded：</strong><span>比正常文字宽度宽1个基数。</span>
+					</li>
+					<li>
+						<strong>expanded：</strong><span>比正常文字宽度宽2个基数。</span>
+					</li>
+					<li>
+						<strong>extra-expanded：</strong><span>比正常文字宽度宽3个基数。</span>
+					</li>
+					<li>
+						<strong>ultra-expanded：</strong><span>比正常文字宽度宽4个基数。</span>
 					</li>
 				</ul>
 			</div>
@@ -74,9 +89,10 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>设置或检索对象的背景图像计算 &lt;' background-position '&gt; 时的参考原点(位置)。</strong>
+						<strong>设置或检索对象中的文字是否横向拉伸变形。</strong>
 					</li>
-					<li>对应的脚本特性为backgroundOrigin。</li>
+					<li>文字的拉伸是相对于浏览器显示的字体的正常宽度。</li>
+					<li>对应的脚本特性为fontStretch。</li>
 				</ul>
 			</div>
 			<a class="panel-block m-background">
@@ -106,24 +122,20 @@
 						    </tr>
 						  </thead>
 						  <tbody>
-						     <tr>
-						     	<th rowspan="3">Basic Support</th>
+						      <tr>
+						     	<th rowspan="2">Basic Support</th>
 						     	<td class="m-red">6.0-8.0</td>
-						     	<td class="m-red">2.0-3.5</td>
-						     	<td rowspan="3" class="m-green">4.0+</td>
-						     	<td rowspan="3" class="m-green">6.0+</td>
-						     	<td rowspan="3" class="m-green">15.0+</td>
-						     	<td rowspan="3" class="m-green">6.0+</td>
-						     	<td class="m-green">2.1-2.3<sup>-webkit-</sup></td>
-						     	<td rowspan="3" class="m-green">18.0+</td>
+						     	<td class="m-red">2.0-8.0</td>
+						     	<td rowspan="2" class="m-red">4.0-43.0</td>
+						     	<td rowspan="2" class="m-red">3.1-8.1</td>
+						     	<td rowspan="2" class="m-red">15.0-28.0</td>
+						     	<td rowspan="2" class="m-red">3.2-8.1</td>
+						     	<td rowspan="2" class="m-red">2.1-4.4.4</td>
+						     	<td rowspan="2" class="m-red">18.0-40.0</td>
 						     </tr>
 						     <tr>
-						     	<td rowspan="2" class="m-green">9.0+</td>
-						     	<td class="m-green">3.6<sup>-moz-</sup></td>
-						     	<td rowspan="2" class="m-green">3.0+</td>
-						     </tr>
-						     <tr>
-						     	<td class="m-green">4.0+</td>
+						     	<td class="m-green">9.0+#1</td>
+						     	<td class="m-green">9.0+#1</td>
 						     </tr>
 						  </tbody>
 						</table>
@@ -139,31 +151,58 @@
 <html lang="zh-cmn-Hans">
 <head>
 <meta charset="utf-8" />
-<title>background-origin_CSS参考手册_web前端开发参考手册系列</title>
+<title>font-stretch_CSS参考手册_web前端开发参考手册系列</title>
 <meta name="author" content="制作者：CarryQiu,联系：187346709@qq.com" />
 <style>
-	h1{font-size:20px;}
-	h2{font-size:16px;}
-	p{border:10px dashed #666;width:200px;height:200px;padding:20px;background:#aaa url(skin/p_103x196_1.jpg) no-repeat;}
-	.border-box p{background-origin:border-box;}
-	.padding-box p{background-origin:padding-box;}
-	.content-box p{background-origin:content-box;}
+	p{margin:0;font-size:80px;font-weight:bold;background:#ddd;width:30px;}
+	.test .normal p{font-stretch:normal;}
+	.test .condensed p{font-stretch:condensed;}
+	.test .ultra-condensed p{font-stretch:ultra-condensed;}
+	.test .extra-condensed p{font-stretch:extra-condensed;}
+	.test .semi-expanded p{font-stretch:semi-expanded;}
+	.test .expanded p{font-stretch:expanded;}
+	.test .ultra-expanded p{font-stretch:ultra-expanded;}
+	.test .extra-expanded p{font-stretch:extra-expanded;}
+	.test .semi-condensed p{font-stretch:semi-condensed;}
 </style>
 </head>
 <body>
-	<h1>background-origin</h1>
 	<ul class="test">
-		<li class="border-box">
-			<h2>border-box</h2>
-			<p>从border区域（含border）开始显示背景图像</p>
+		<li class="normal">
+			<strong>normal</strong>
+			<p>a</p>
 		</li>
-		<li class="padding-box">
-			<h2>padding-box</h2>
-			<p>从padding区域（含padding）开始显示背景图像</p>
+		<li class="condensed">
+			<strong>condensed</strong>
+			<p>a</p>
 		</li>
-		<li class="content-box">
-			<h2>content-box</h2>
-			<p>从content区域开始显示背景图像</p>
+		<li class="ultra-condensed">
+			<strong>ultra-condensed</strong>
+			<p>a</p>
+		</li>
+		<li class="extra-condensed">
+			<strong>extra-condensed</strong>
+			<p>a</p>
+		</li>
+		<li class="semi-expanded">
+			<strong>semi-expanded</strong>
+			<p>a</p>
+		</li>
+		<li class="expanded">
+			<strong>expanded</strong>
+			<p>a</p>
+		</li>
+		<li class="ultra-expanded">
+			<strong>ultra-expanded</strong>
+			<p>a</p>
+		</li>
+		<li class="extra-expanded">
+			<strong>extra-expanded</strong>
+			<p>a</p>
+		</li>
+		<li class="semi-condensed">
+			<strong>semi-condensed</strong>
+			<p>a</p>
 		</li>
 	</ul>
 </body>

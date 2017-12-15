@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		 <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=no">
-		<title>background-origin</title>
+		<title>tab-size</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
 		<!--<link rel="stylesheet" href="../../lib/font-awesome.css">-->
@@ -14,7 +14,7 @@
 		<div class="container">
 			<nav class="panel is-unselectable">
 			<p class="panel-heading has-text-info">
-				<strong class="has-text-info">background-origin</strong>
+				<strong class="has-text-info">tab-size</strong>
 				<a class="button is-link m-copy">复制本页链接</a>
 			    <a class="button is-success">
 			    	<span>分享</span>
@@ -30,22 +30,19 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>background-origin：</strong><span>&lt;box&gt; [ , &lt;box&gt; ]*</span>
+						<strong>tab-size：</strong><span>&lt;integer&gt; | &lt;length&gt;</span>
 					</li>
 					<li>
-						<strong>&lt;box&gt;</strong><span> = border-box | padding-box | content-box</span>
+						<strong>默认值：</strong><span class="m-border-bg">8</span>
 					</li>
 					<li>
-						<strong>默认值：</strong><span class="m-border-bg">padding-box</span>
+						<strong>适用于：</strong><span>块容器</span>
 					</li>
 					<li>
-						<strong>适用于：</strong><span>所有元素</span>
+						<strong>继承性：</strong><span>有</span>
 					</li>
 					<li>
-						<strong>继承性：</strong><span>无</span>
-					</li>
-					<li>
-						<strong>动画性：</strong><span>否</span>
+						<strong>动画性：</strong><span>当值为 &lt;length&gt; 时</span>
 					</li>
 					<li>
 						<strong>计算值：</strong><span>指定值</span>
@@ -58,13 +55,10 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>padding-box:</strong><span>从padding区域（含padding）开始显示背景图像。</span>
+						<strong>&lt;integer&gt;:</strong><span>用整数值指定制表符的长度。不允许负值。</span>
 					</li>
 					<li>
-						<strong>border-box:</strong><span>从border区域（含border）开始显示背景图像。</span>
-					</li>
-					<li>
-						<strong>content-box:</strong><span>从content区域开始显示背景图像。</span>
+						<strong>&lt;length&gt;:</strong><span>用长度值指定制表符的长度。不允许负值。</span>
 					</li>
 				</ul>
 			</div>
@@ -74,9 +68,11 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>设置或检索对象的背景图像计算 &lt;' background-position '&gt; 时的参考原点(位置)。</strong>
+						<strong>检索或设置对象中的制表符的长度。</strong>
 					</li>
-					<li>对应的脚本特性为backgroundOrigin。</li>
+					<li>该属性决定了制表符(U+0009)的宽度，整数代表空格(U+0020)的倍数(如：tab-size:4; 表示制表符宽度是4个空格的宽度)</li>
+					<li>只有当 &lt;' white-space '&gt; 的属性值为：pre | pre-wrap时，该属性的定义才有效</li>
+					<li>对应的脚本特性为tabSize。</li>
 				</ul>
 			</div>
 			<a class="panel-block m-background">
@@ -106,24 +102,40 @@
 						    </tr>
 						  </thead>
 						  <tbody>
-						     <tr>
-						     	<th rowspan="3">Basic Support</th>
-						     	<td class="m-red">6.0-8.0</td>
-						     	<td class="m-red">2.0-3.5</td>
-						     	<td rowspan="3" class="m-green">4.0+</td>
-						     	<td rowspan="3" class="m-green">6.0+</td>
-						     	<td rowspan="3" class="m-green">15.0+</td>
-						     	<td rowspan="3" class="m-green">6.0+</td>
-						     	<td class="m-green">2.1-2.3<sup>-webkit-</sup></td>
-						     	<td rowspan="3" class="m-green">18.0+</td>
+						      <tr>
+						     	<th rowspan="2">&lt;integer&gt;</th>
+						     	<td rowspan="2" class="m-red">6.0-11.0</td>
+						     	<td class="m-red">2.0-3.6</td>
+						     	<td class="m-red">4.0-20.0</td>
+						     	<td class="m-red">6.0</td>
+						     	<td rowspan="2" class="m-green">15.0+</td>
+						     	<td class="m-red">6.0-6.1</td>
+						     	<td class="m-red">2.1-4.3</td>
+						     	<td class="m-red">18.0-19.0</td>
 						     </tr>
 						     <tr>
-						     	<td rowspan="2" class="m-green">9.0+</td>
-						     	<td class="m-green">3.6<sup>-moz-</sup></td>
-						     	<td rowspan="2" class="m-green">3.0+</td>
+						     	<td class="m-green">4.0-40.0<sup>-moz-</sup></td>
+						     	<td class="m-green">21.0+</td>
+						     	<td class="m-green">6.1+</td>
+						     	<td class="m-green">7.0+</td>
+						     	<td class="m-green">4.4.0+</td>
+						     	<td class="m-green">20.0+</td>
+						     </tr>
+						      <tr>
+						     	<th rowspan="2">&lt;length&gt;</th>
+						     	<td rowspan="2" class="m-red">6.0-11.0</td>
+						     	<td rowspan="2" class="m-red">2.0-40.0</td>
+						     	<td class="m-red">4.0-41.0</td>
+						     	<td rowspan="2" class="m-red">6.0-8.0</td>
+						     	<td class="m-red">15.0-28.0</td>
+						     	<td rowspan="2" class="m-red">6.0-8.3</td>
+						     	<td rowspan="2" class="m-red">2.1-4.4.4</td>
+						     	<td class="m-red">18.0-40.0</td>
 						     </tr>
 						     <tr>
-						     	<td class="m-green">4.0+</td>
+						     	<td class="m-green">42.0+</td>
+						     	<td class="m-green">29.0+</td>
+						     	<td class="m-green">41.0+</td>
 						     </tr>
 						  </tbody>
 						</table>
@@ -139,33 +151,19 @@
 <html lang="zh-cmn-Hans">
 <head>
 <meta charset="utf-8" />
-<title>background-origin_CSS参考手册_web前端开发参考手册系列</title>
+<title>tab-size_CSS参考手册_web前端开发参考手册系列</title>
 <meta name="author" content="制作者：CarryQiu,联系：187346709@qq.com" />
 <style>
-	h1{font-size:20px;}
-	h2{font-size:16px;}
-	p{border:10px dashed #666;width:200px;height:200px;padding:20px;background:#aaa url(skin/p_103x196_1.jpg) no-repeat;}
-	.border-box p{background-origin:border-box;}
-	.padding-box p{background-origin:padding-box;}
-	.content-box p{background-origin:content-box;}
+	pre{background:#eee;-moz-tab-size:4;-o-tab-size:4;tab-size:4;}
 </style>
 </head>
 <body>
-	<h1>background-origin</h1>
-	<ul class="test">
-		<li class="border-box">
-			<h2>border-box</h2>
-			<p>从border区域（含border）开始显示背景图像</p>
-		</li>
-		<li class="padding-box">
-			<h2>padding-box</h2>
-			<p>从padding区域（含padding）开始显示背景图像</p>
-		</li>
-		<li class="content-box">
-			<h2>content-box</h2>
-			<p>从content区域开始显示背景图像</p>
-		</li>
-	</ul>
+	<pre>
+	你站在桥上看风景，
+		看风景的人在楼上看你。
+	明月装饰了你的窗子，
+		你装饰了别人的梦。
+	</pre>
 </body>
 </html>
 				</textarea>

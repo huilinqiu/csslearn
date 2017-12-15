@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		 <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=no">
-		<title>background-origin</title>
+		<title>font-variant</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
 		<!--<link rel="stylesheet" href="../../lib/font-awesome.css">-->
@@ -14,7 +14,7 @@
 		<div class="container">
 			<nav class="panel is-unselectable">
 			<p class="panel-heading has-text-info">
-				<strong class="has-text-info">background-origin</strong>
+				<strong class="has-text-info">font-variant</strong>
 				<a class="button is-link m-copy">复制本页链接</a>
 			    <a class="button is-success">
 			    	<span>分享</span>
@@ -30,19 +30,16 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>background-origin：</strong><span>&lt;box&gt; [ , &lt;box&gt; ]*</span>
+						<strong>font-variant：</strong><span>normal | small-caps</span>
 					</li>
 					<li>
-						<strong>&lt;box&gt;</strong><span> = border-box | padding-box | content-box</span>
-					</li>
-					<li>
-						<strong>默认值：</strong><span class="m-border-bg">padding-box</span>
+						<strong>默认值：</strong><span class="m-border-bg">normal</span>
 					</li>
 					<li>
 						<strong>适用于：</strong><span>所有元素</span>
 					</li>
 					<li>
-						<strong>继承性：</strong><span>无</span>
+						<strong>继承性：</strong><span>有</span>
 					</li>
 					<li>
 						<strong>动画性：</strong><span>否</span>
@@ -58,13 +55,10 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>padding-box:</strong><span>从padding区域（含padding）开始显示背景图像。</span>
+						<strong>&lt;normal&gt;</strong><span>正常的字体。</span>
 					</li>
 					<li>
-						<strong>border-box:</strong><span>从border区域（含border）开始显示背景图像。</span>
-					</li>
-					<li>
-						<strong>content-box:</strong><span>从content区域开始显示背景图像。</span>
+						<strong>&lt;small-caps&gt;</strong><span>小型的大写字母字体</span>
 					</li>
 				</ul>
 			</div>
@@ -74,9 +68,9 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>设置或检索对象的背景图像计算 &lt;' background-position '&gt; 时的参考原点(位置)。</strong>
+						<strong>设置或检索对象中的文本是否为小型的大写字母。</strong>
 					</li>
-					<li>对应的脚本特性为backgroundOrigin。</li>
+					<li>对应的脚本特性为fontVariant。</li>
 				</ul>
 			</div>
 			<a class="panel-block m-background">
@@ -106,24 +100,16 @@
 						    </tr>
 						  </thead>
 						  <tbody>
-						     <tr>
-						     	<th rowspan="3">Basic Support</th>
-						     	<td class="m-red">6.0-8.0</td>
-						     	<td class="m-red">2.0-3.5</td>
-						     	<td rowspan="3" class="m-green">4.0+</td>
-						     	<td rowspan="3" class="m-green">6.0+</td>
-						     	<td rowspan="3" class="m-green">15.0+</td>
-						     	<td rowspan="3" class="m-green">6.0+</td>
-						     	<td class="m-green">2.1-2.3<sup>-webkit-</sup></td>
-						     	<td rowspan="3" class="m-green">18.0+</td>
-						     </tr>
-						     <tr>
-						     	<td rowspan="2" class="m-green">9.0+</td>
-						     	<td class="m-green">3.6<sup>-moz-</sup></td>
-						     	<td rowspan="2" class="m-green">3.0+</td>
-						     </tr>
-						     <tr>
+						      <tr>
+						     	<th>Basic Support</th>
+						     	<td class="m-green">6.0+</td>
+						     	<td class="m-green">2.0+</td>
 						     	<td class="m-green">4.0+</td>
+						     	<td class="m-green">3.1+</td>
+						     	<td class="m-green">3.5+</td>
+						     	<td class="m-green">3.2+</td>
+						     	<td class="m-green">2.1+</td>
+						     	<td class="m-green">18.0+</td>
 						     </tr>
 						  </tbody>
 						</table>
@@ -139,31 +125,24 @@
 <html lang="zh-cmn-Hans">
 <head>
 <meta charset="utf-8" />
-<title>background-origin_CSS参考手册_web前端开发参考手册系列</title>
+<title>font-variant_CSS参考手册_web前端开发参考手册系列</title>
 <meta name="author" content="制作者：CarryQiu,联系：187346709@qq.com" />
 <style>
-	h1{font-size:20px;}
-	h2{font-size:16px;}
-	p{border:10px dashed #666;width:200px;height:200px;padding:20px;background:#aaa url(skin/p_103x196_1.jpg) no-repeat;}
-	.border-box p{background-origin:border-box;}
-	.padding-box p{background-origin:padding-box;}
-	.content-box p{background-origin:content-box;}
+	.test p {
+		margin: 15px 0;
+		border: 1px solid #000;
+	}
+	.small-caps span {
+		font-variant: small-caps;
+	}
 </style>
 </head>
 <body>
-	<h1>background-origin</h1>
 	<ul class="test">
-		<li class="border-box">
-			<h2>border-box</h2>
-			<p>从border区域（含border）开始显示背景图像</p>
-		</li>
-		<li class="padding-box">
-			<h2>padding-box</h2>
-			<p>从padding区域（含padding）开始显示背景图像</p>
-		</li>
-		<li class="content-box">
-			<h2>content-box</h2>
-			<p>从content区域开始显示背景图像</p>
+		<li>
+			<strong>将文本转换为小型的大写字母</strong>
+			<div>原　文： HOW DO YOU DO & <span>how do you do.</span></div>
+			<div class="small-caps">转换后： HOW DO YOU DO & <span>how do you do.</span></div>
 		</li>
 	</ul>
 </body>

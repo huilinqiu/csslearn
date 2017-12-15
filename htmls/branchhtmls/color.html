@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		 <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=no">
-		<title>background-origin</title>
+		<title>color</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
 		<!--<link rel="stylesheet" href="../../lib/font-awesome.css">-->
@@ -14,7 +14,7 @@
 		<div class="container">
 			<nav class="panel is-unselectable">
 			<p class="panel-heading has-text-info">
-				<strong class="has-text-info">background-origin</strong>
+				<strong class="has-text-info">color</strong>
 				<a class="button is-link m-copy">复制本页链接</a>
 			    <a class="button is-success">
 			    	<span>分享</span>
@@ -30,13 +30,10 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>background-origin：</strong><span>&lt;box&gt; [ , &lt;box&gt; ]*</span>
+						<strong>color：</strong><span>&lt;color&gt;</span>
 					</li>
 					<li>
-						<strong>&lt;box&gt;</strong><span> = border-box | padding-box | content-box</span>
-					</li>
-					<li>
-						<strong>默认值：</strong><span class="m-border-bg">padding-box</span>
+						<strong>默认值：</strong><span class="m-border-bg">由user agent决定</span>
 					</li>
 					<li>
 						<strong>适用于：</strong><span>所有元素</span>
@@ -45,7 +42,7 @@
 						<strong>继承性：</strong><span>无</span>
 					</li>
 					<li>
-						<strong>动画性：</strong><span>否</span>
+						<strong>动画性：</strong><span>是</span>
 					</li>
 					<li>
 						<strong>计算值：</strong><span>指定值</span>
@@ -58,13 +55,7 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>padding-box:</strong><span>从padding区域（含padding）开始显示背景图像。</span>
-					</li>
-					<li>
-						<strong>border-box:</strong><span>从border区域（含border）开始显示背景图像。</span>
-					</li>
-					<li>
-						<strong>content-box:</strong><span>从content区域开始显示背景图像。</span>
+						<strong>&lt;color&gt;</strong><span>指定颜色。</span>
 					</li>
 				</ul>
 			</div>
@@ -74,9 +65,25 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>设置或检索对象的背景图像计算 &lt;' background-position '&gt; 时的参考原点(位置)。</strong>
+						<strong>检索或设置对象的文本颜色。无默认值</strong>
 					</li>
-					<li>对应的脚本特性为backgroundOrigin。</li>
+					<li>可以使用Color Name(颜色名称), HEX, RGB, RGBA, HSL, HSLA, transparent来指定color。</li>
+					<li>注意，用颜色名称指定color可能不被一些浏览器接受。。</li>
+					<li>color属性值被间接用来提供一个中间值 currentColor 以供其他接受颜色值的属性使用。</li>
+					<li>
+						<a></a>
+						<a class="panel-block m-background-blue">
+							<strong>示例：</strong>
+						</a>
+							<pre class="m-border-blue">div {
+	border: 10px solid;
+	color: red;
+}</pre>
+						<a class="panel-block m-background-blue has-text-danger">
+							<span>如上代码，没有定义边框的颜色，但定义了color的颜色为red，那么这时red将会作为一个间接值 currentColor 提供给边框颜色属性，所以最终边框色也为red。</span>
+						</a>
+					</li>
+					<li>对应的脚本特性为color。</li>
 				</ul>
 			</div>
 			<a class="panel-block m-background">
@@ -106,24 +113,23 @@
 						    </tr>
 						  </thead>
 						  <tbody>
-						     <tr>
-						     	<th rowspan="3">Basic Support</th>
-						     	<td class="m-red">6.0-8.0</td>
-						     	<td class="m-red">2.0-3.5</td>
+						      <tr>
+						     	<th>Basic Support</th>
+						     	<td class="m-green">6.0+</td>
+						     	<td rowspan="3" class="m-green">2.0+</td>
 						     	<td rowspan="3" class="m-green">4.0+</td>
-						     	<td rowspan="3" class="m-green">6.0+</td>
+						     	<td rowspan="3" class="m-green">3.1+</td>
 						     	<td rowspan="3" class="m-green">15.0+</td>
-						     	<td rowspan="3" class="m-green">6.0+</td>
-						     	<td class="m-green">2.1-2.3<sup>-webkit-</sup></td>
+						     	<td rowspan="3" class="m-green">3.2+</td>
+						     	<td rowspan="3" class="m-green">2.1+</td>
 						     	<td rowspan="3" class="m-green">18.0+</td>
 						     </tr>
 						     <tr>
-						     	<td rowspan="2" class="m-green">9.0+</td>
-						     	<td class="m-green">3.6<sup>-moz-</sup></td>
-						     	<td rowspan="2" class="m-green">3.0+</td>
+						     	<th rowspan="2">RGBA,HSL,HSLA,transparent</th>
+						     	<td class="m-red">6.0-8.0</td>
 						     </tr>
 						     <tr>
-						     	<td class="m-green">4.0+</td>
+						     	<td class="m-green">9.0+</td>
 						     </tr>
 						  </tbody>
 						</table>
@@ -139,31 +145,47 @@
 <html lang="zh-cmn-Hans">
 <head>
 <meta charset="utf-8" />
-<title>background-origin_CSS参考手册_web前端开发参考手册系列</title>
+<title>color_CSS参考手册_web前端开发参考手册系列</title>
 <meta name="author" content="制作者：CarryQiu,联系：187346709@qq.com" />
 <style>
-	h1{font-size:20px;}
-	h2{font-size:16px;}
-	p{border:10px dashed #666;width:200px;height:200px;padding:20px;background:#aaa url(skin/p_103x196_1.jpg) no-repeat;}
-	.border-box p{background-origin:border-box;}
-	.padding-box p{background-origin:padding-box;}
-	.content-box p{background-origin:content-box;}
+	.colorname p{color:green;}
+	.hex p{color:#ff0000;}
+	.rgb p{color:rgb(0,0,0);}
+	.rgba p{color:rgba(0,0,0,.5);}
+	.hsl p{color:hsl(240,50%,50%);}
+	.hsla p{color:hsla(240,50%,50%,.5);}
+	.transparent p{color:transparent;}
 </style>
 </head>
 <body>
-	<h1>background-origin</h1>
 	<ul class="test">
-		<li class="border-box">
-			<h2>border-box</h2>
-			<p>从border区域（含border）开始显示背景图像</p>
+		<li class="colorname">
+			<strong>Color Name(用颜色名称表示法)</strong>
+			<p>看看我的颜色　{color:green;}</p>
 		</li>
-		<li class="padding-box">
-			<h2>padding-box</h2>
-			<p>从padding区域（含padding）开始显示背景图像</p>
+		<li class="hex">
+			<strong>HEX(十六进制数值表示法)</strong>
+			<p>看看我的颜色　{color:#ff0000;}</p>
 		</li>
-		<li class="content-box">
-			<h2>content-box</h2>
-			<p>从content区域开始显示背景图像</p>
+		<li class="rgb">
+			<strong>RGB</strong>
+			<p>看看我的颜色　{color:rgb(0,0,0);}</p>
+		</li>
+		<li class="rgba">
+			<strong>RGBA</strong> - IE8及以下浏览器不支持这种写法
+			<p>看看我的颜色　{color:rgba(0,0,0,.5);}</p>
+		</li>
+		<li class="hsl">
+			<strong>HSL</strong> - IE8及以下浏览器不支持这种写法
+			<p>看看我的颜色　{color:hsl(240,50%,50%);}</p>
+		</li>
+		<li class="hsla">
+			<strong>HSLA</strong> - IE8及以下浏览器不支持这种写法
+			<p>看看我的颜色　{color:hsla(240,50%,50%,.5);}</p>
+		</li>
+		<li class="transparent">
+			<strong>transparent</strong> - IE8及以下浏览器将文本颜色设置为transparent，文本将显示为黑色
+			<p>看看我的颜色　{color:transparent;}</p>
 		</li>
 	</ul>
 </body>

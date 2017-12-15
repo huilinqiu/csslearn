@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		 <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=no">
-		<title>background-origin</title>
+		<title>font</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
 		<!--<link rel="stylesheet" href="../../lib/font-awesome.css">-->
@@ -14,7 +14,7 @@
 		<div class="container">
 			<nav class="panel is-unselectable">
 			<p class="panel-heading has-text-info">
-				<strong class="has-text-info">background-origin</strong>
+				<strong class="has-text-info">font</strong>
 				<a class="button is-link m-copy">复制本页链接</a>
 			    <a class="button is-success">
 			    	<span>分享</span>
@@ -30,13 +30,10 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>background-origin：</strong><span>&lt;box&gt; [ , &lt;box&gt; ]*</span>
+						<strong>font：</strong><span>[ [ &lt;' font-style '&gt; || &lt;' font-variant '&gt; || &lt;' font-weight '&gt; ]? &lt;' font-size '&gt; [ / &lt;' line-height '&gt; ]? &lt;' font-family '&gt; ] | caption | icon | menu | message-box | small-caption | status-bar</span>
 					</li>
 					<li>
-						<strong>&lt;box&gt;</strong><span> = border-box | padding-box | content-box</span>
-					</li>
-					<li>
-						<strong>默认值：</strong><span class="m-border-bg">padding-box</span>
+						<strong>默认值：</strong><span class="m-border-bg">看独立属性自身</span>
 					</li>
 					<li>
 						<strong>适用于：</strong><span>所有元素</span>
@@ -45,10 +42,10 @@
 						<strong>继承性：</strong><span>无</span>
 					</li>
 					<li>
-						<strong>动画性：</strong><span>否</span>
+						<strong>动画性：</strong><span>看独立属性自身</span>
 					</li>
 					<li>
-						<strong>计算值：</strong><span>指定值</span>
+						<strong>计算值：</strong><span>看独立属性自身</span>
 					</li>
 				</ul>
 			</div>
@@ -58,13 +55,40 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>padding-box:</strong><span>从padding区域（含padding）开始显示背景图像。</span>
+						<strong>&lt;'font-style'&gt;</strong><span>指定文本字体样式。</span>
 					</li>
 					<li>
-						<strong>border-box:</strong><span>从border区域（含border）开始显示背景图像。</span>
+						<strong>&lt;'font-variant'&gt;</strong><span>指定文本是否为小型的大写字母。</span>
 					</li>
 					<li>
-						<strong>content-box:</strong><span>从content区域开始显示背景图像。</span>
+						<strong>&lt;'font-weight'&gt;</strong><span>指定文本字体的粗细。</span>
+					</li>
+					<li>
+						<strong>&lt;'font-size'&gt;</strong><span>指定文本字体尺寸。</span>
+					</li>
+					<li>
+						<strong>&lt;'line-height'&gt;</strong><span>指定文本字体的行高。</span>
+					</li>
+					<li>
+						<strong>&lt;'font-family'&gt;</strong><span>指定文本使用某个字体或字体序列。</span>
+					</li>
+					<li>
+						<strong>&lt;caption:&gt;</strong><span>使用有标题的系统控件的文本字体（如按钮，菜单等）（CSS2）。</span>
+					</li>
+					<li>
+						<strong>&lt;icon:&gt;</strong><span>使用图标标签的字体（CSS2）。</span>
+					</li>
+					<li>
+						<strong>&lt;menu:&gt;</strong><span>使用菜单的字体（CSS2）。</span>
+					</li>
+					<li>
+						<strong>&lt;message-box:&gt;</strong><span>使用信息对话框的文本字体（CSS2）。</span>
+					</li>
+					<li>
+						<strong>&lt;small-caption:&gt;</strong><span>使用小控件的字体（CSS2）。</span>
+					</li>
+					<li>
+						<strong>&lt;status-bar:&gt;</strong><span>使用窗口状态栏的字体（CSS2）。</span>
 					</li>
 				</ul>
 			</div>
@@ -74,9 +98,13 @@
 			<div class="panel-block control">
 				<ul>
 					<li>
-						<strong>设置或检索对象的背景图像计算 &lt;' background-position '&gt; 时的参考原点(位置)。</strong>
+						<strong>设置或检索对象中的文本特性。该属性是复合属性。</strong>
 					</li>
-					<li>对应的脚本特性为backgroundOrigin。</li>
+					<li>
+						<span>使用第一种声明方式参数必须按照如上的排列顺序，且 &lt;' font-size '&gt; 和&lt;' font-family '&gt; 是不可忽略的。每个参数仅允许有一个值。忽略的将使用其参数对应的独立属性的默认值。</span>
+					</li>
+					<li>对于如何使用客户端系统没有字体和自定义字体，可以参阅@font-face规则。</li>
+					<li>对应的脚本特性为font。</li>
 				</ul>
 			</div>
 			<a class="panel-block m-background">
@@ -106,24 +134,16 @@
 						    </tr>
 						  </thead>
 						  <tbody>
-						     <tr>
-						     	<th rowspan="3">Basic Support</th>
-						     	<td class="m-red">6.0-8.0</td>
-						     	<td class="m-red">2.0-3.5</td>
-						     	<td rowspan="3" class="m-green">4.0+</td>
-						     	<td rowspan="3" class="m-green">6.0+</td>
-						     	<td rowspan="3" class="m-green">15.0+</td>
-						     	<td rowspan="3" class="m-green">6.0+</td>
-						     	<td class="m-green">2.1-2.3<sup>-webkit-</sup></td>
-						     	<td rowspan="3" class="m-green">18.0+</td>
-						     </tr>
-						     <tr>
-						     	<td rowspan="2" class="m-green">9.0+</td>
-						     	<td class="m-green">3.6<sup>-moz-</sup></td>
-						     	<td rowspan="2" class="m-green">3.0+</td>
-						     </tr>
-						     <tr>
+						      <tr>
+						     	<th>Basic Support</th>
+						     	<td class="m-green">6.0+</td>
+						     	<td class="m-green">2.0+</td>
 						     	<td class="m-green">4.0+</td>
+						     	<td class="m-green">3.1+</td>
+						     	<td class="m-green">3.5+</td>
+						     	<td class="m-green">3.2+</td>
+						     	<td class="m-green">2.1+</td>
+						     	<td class="m-green">18.0+</td>
 						     </tr>
 						  </tbody>
 						</table>
@@ -139,31 +159,68 @@
 <html lang="zh-cmn-Hans">
 <head>
 <meta charset="utf-8" />
-<title>background-origin_CSS参考手册_web前端开发参考手册系列</title>
+<title>font_CSS参考手册_web前端开发参考手册系列</title>
 <meta name="author" content="制作者：CarryQiu,联系：187346709@qq.com" />
 <style>
-	h1{font-size:20px;}
-	h2{font-size:16px;}
-	p{border:10px dashed #666;width:200px;height:200px;padding:20px;background:#aaa url(skin/p_103x196_1.jpg) no-repeat;}
-	.border-box p{background-origin:border-box;}
-	.padding-box p{background-origin:padding-box;}
-	.content-box p{background-origin:content-box;}
+	.test p{margin:15px 0;border:1px solid #000;}
+	.font1 p{font:18px Simsun,arial,sans-serif;}
+	.font2 p{font:italic 18px Simsun,arial,sans-serif;}
+	.font3 p{font:italic small-caps 18px Simsun,arial,sans-serif;}
+	.font4 p{font:italic small-caps bold 18px Simsun,arial,sans-serif;}
+	.font5 p{font:italic small-caps bold 18px/2 Simsun,arial,sans-serif;}
+	.caption p{font:caption;}
+	.icon p{font:icon;}
+	.menu p{font:menu;}
+	.message-box p{font:message-box;}
+	.small-caption p{font:small-caption;}
+	.status-bar p{font:status-bar;}
 </style>
 </head>
 <body>
-	<h1>background-origin</h1>
 	<ul class="test">
-		<li class="border-box">
-			<h2>border-box</h2>
-			<p>从border区域（含border）开始显示背景图像</p>
+		<li class="font1">
+			<strong>只指定字体大小和字体：</strong>
+			<p>本段文字将显示为18px宋体。</p>
 		</li>
-		<li class="padding-box">
-			<h2>padding-box</h2>
-			<p>从padding区域（含padding）开始显示背景图像</p>
+		<li class="font2">
+			<strong>只指定字体样式、大小和字体：</strong>
+			<p>本段文字将显示为斜体的18px宋体。</p>
 		</li>
-		<li class="content-box">
-			<h2>content-box</h2>
-			<p>从content区域开始显示背景图像</p>
+		<li class="font3">
+			<strong>只指定字体样式、小型大写字母、大小和字体：</strong>
+			<p>本段文字将显示为斜体的带小型大写字母的18px宋体。大小型大写字母对比：AaBbCcDdEeFfGg</p>
+		</li>
+		<li class="font4">
+			<strong>只指定字体样式、小型大写字母、粗细、大小和字体：</strong>
+			<p>本段文字将显示为斜体的带小型大写字母的加粗18px宋体。</p>
+		</li>
+		<li class="font5">
+			<strong>只指定字体样式、小型大写字母、粗细、大小、行高和字体：</strong>
+			<p>本段文字将显示为行高为2的斜体的带小型大写字母的加粗18px宋体。</p>
+		</li>
+		<li class="caption">
+			<strong>指定字体为caption：</strong>
+			<p>本段文字将以caption的字体显示。</p>
+		</li>
+		<li class="icon">
+			<strong>指定字体为icon：</strong>
+			<p>本段文字将以icon的字体显示。</p>
+		</li>
+		<li class="menu">
+			<strong>指定字体为menu：</strong>
+			<p>本段文字将以menu的字体显示。</p>
+		</li>
+		<li class="message-box">
+			<strong>指定字体为message-box：</strong>
+			<p>本段文字将以message-box的字体显示。</p>
+		</li>
+		<li class="small-caption">
+			<strong>指定字体为small-caption：</strong>
+			<p>本段文字将以small-caption的字体显示。</p>
+		</li>
+		<li class="status-bar">
+			<strong>指定字体为status-bar：</strong>
+			<p>本段文字将以status-bar的字体显示。</p>
 		</li>
 	</ul>
 </body>
