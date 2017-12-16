@@ -1,33 +1,39 @@
 //复制本页链接到clipboard中
 	var copykey = document.querySelector('.is-link.m-copy');
-	copykey.addEventListener('click',function(event){
-		clipboard.copy(location.href);
-	});
+		if(copykey){
+			copykey.addEventListener('click',function(event){
+			clipboard.copy(location.href);
+		});
+		copykey.classList.add('is-hidden-touch');
+	}
 	
 	//分享
 	var sharekey = document.querySelector('.panel-heading a.is-success');
 	var dropmenu = document.querySelector('.m-dropdown-menu');
-	var display = getComputedStyle(dropmenu,null).getPropertyValue('display');
-	dropmenu.addEventListener('mouseleave',function(){
-		dropmenu.style.display = 'none';
-	});
-	dropmenu.addEventListener('mouseenter',function(){
-		if(display === 'none'){
-			dropmenu.style.display = 'block';
-		}else{
+	if(sharekey && dropmenu){
+		var display = getComputedStyle(dropmenu,null).getPropertyValue('display');
+		dropmenu.addEventListener('mouseleave',function(){
 			dropmenu.style.display = 'none';
-		}
-	});
-	sharekey.addEventListener('mouseleave',function(){
-		dropmenu.style.display = 'none';
-	});
-	sharekey.addEventListener('mouseenter',function(){
-		if(display === 'none'){
-			dropmenu.style.display = 'block';
-		}else{
+		});
+		dropmenu.addEventListener('mouseenter',function(){
+			if(display === 'none'){
+				dropmenu.style.display = 'block';
+			}else{
+				dropmenu.style.display = 'none';
+			}
+		});
+		sharekey.addEventListener('mouseleave',function(){
 			dropmenu.style.display = 'none';
-		}
-	});	
+		});
+		sharekey.addEventListener('mouseenter',function(){
+			if(display === 'none'){
+				dropmenu.style.display = 'block';
+			}else{
+				dropmenu.style.display = 'none';
+			}
+		});	
+	}
+	
   
 // 点击回到顶部按键
 	var toTop = document.querySelector('.toTop');
@@ -106,4 +112,14 @@
 		navLevel.classList.remove('is-mobile');
 		navLevel.classList.add('is-hidden-touch');
 		navLevel.classList.add('is-hidden-desktop-only');
+	}
+
+	// 手机下关闭最下面媒体栏中部分显示内容
+	var emailContent = document.querySelector('.box .media-content small');
+	if(emailContent){
+		emailContent.classList.add('is-hidden-touch');
+	}
+	var welcome = document.querySelector('.box .media-content span');
+	if(welcome){
+		welcome.classList.add('is-hidden-touch');
 	}
