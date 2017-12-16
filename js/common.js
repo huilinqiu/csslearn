@@ -123,3 +123,20 @@
 	if(welcome){
 		welcome.classList.add('is-hidden-touch');
 	}
+
+	// 获取meta元素中，有关缩放的内容，修改为yes
+	var metas = document.querySelectorAll('meta');
+		if(metas){
+			for(var i=0;i<metas.length;i++){
+				var name = metas[i].getAttribute('name');
+				if(name === 'viewport'){
+					var content = metas[i].getAttribute('content');
+					if(content){
+						content = content.replace(/(user-scalable=no)$/g,'user-scalable=yes');
+						metas[i].setAttribute('content',content);
+					}
+					
+				}
+			}
+	}
+	
